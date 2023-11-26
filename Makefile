@@ -90,6 +90,9 @@ endef
 # Default target
 default: $(ROM)
 
+run:
+	mupen64plus build/nu0.z64
+
 clean:
 	$(RM) -r $(BUILD_DIR)
 

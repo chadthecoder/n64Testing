@@ -21,6 +21,11 @@ float cameraFov = 120.0f;
 
 void shadetri(Dynamic* dynamicp);
 
+// Initialize the projection matrix
+  u16 persp_norm;
+
+  static LookAt lookat;
+
 /* Make the display list and activate the task. */
 
 /* Initialize stage 0 */
@@ -33,7 +38,7 @@ void initStage00(void)
   Mtx rotate_y; 
   Mtx rotate_z; 
 
-  lodPos_x = 50.0f;
+  lodPos_x = (f32)100.0;
 
   lodRot_x = 0.0;
     lodRot_y = 0.0;
@@ -58,8 +63,7 @@ void makeDL00(void)
 	  1.0F, 10.0F, 1.0F); */ //guFrustum is for prospective projection
   //guRotate(&gfx_dynamic.modeling, 0.0F, 0.0F, 0.0F, 1.0F);
 
-  // Initialize the projection matrix
-  u16 persp_norm;
+  
 
   guPerspective(
     &gfx_dynamic.projection,
@@ -71,9 +75,16 @@ void makeDL00(void)
     1.0
   );
 
-  guTranslate(&gfx_dynamic.translate, lodPos_x,lodPos_x, lodPos_x); //not working?
+  guLookAtReflect(&gfx_dynamic.viewing, &lookat,
+		  0, 0, 600,
+		  0, 0, 0,
+		  0, 1, 0);
 
   guRotate(&gfx_dynamic.modeling, lodRot_x, 0.0F, 1.0F, 0.0f);
+
+  guTranslate(&gfx_dynamic.translate, lodPos_x, 0, lodPos_x); //not working?
+
+  
 
   /* guRotate(&rotate_x, lodRot_x, 1.0F, 0.0F, 0.0F);
   guRotate(&rotate_y, lodRot_y, 0.0F, 1.0F, 0.0F);
@@ -117,6 +128,8 @@ void updateGame00(void)
 
   lodRot_x += (f32)1.0;
 
+  //lodPos_x += (f32)10.0;
+
   //guRotate(&gfx_dynamic.modeling, 45.0F, 0.0F, 0.0F, 1.0F);
   //osSyncPrintf("B button Push\n");
   /* Read data of the controller 1 */
@@ -153,11 +166,14 @@ void updateGame00(void)
   /* Data reading of controller 1 */
   //nuContDataGetEx(contdata,0);
 
-  /* if(contdata[0].trigger & A_BUTTON)
+  if(contdata[0].trigger & A_BUTTON)
     {
       //vel = -vel;
+      lodPos_x += 64.0;
       osSyncPrintf("A button Push\n");
-    } */
+    }
+
+    osSyncPrintf("A button Push\n");
 
   /* Change the display position by stick data */
   //cameraPos = contdata->stick_x;
@@ -205,11 +221,24 @@ static Vtx shade_vtx[] =  {
 /* Draw a square  */
 void shadetri(Dynamic* dynamicp)
 {
+  gSPPerspNormalize(glistp++, persp_norm);
+
+  gSPLookAt(glistp++, &lookat);
+
   gSPMatrix(glistp++,OS_K0_TO_PHYSICAL(&(dynamicp->projection)),
 		G_MTX_PROJECTION|G_MTX_LOAD|G_MTX_NOPUSH);
-  gSPMatrix(glistp++,OS_K0_TO_PHYSICAL(&(dynamicp->modeling)),
-		G_MTX_MODELVIEW|G_MTX_LOAD|G_MTX_NOPUSH);
 
+    gSPMatrix(glistp++, OS_K0_TO_PHYSICAL(&(dynamicp->viewing)),
+	    G_MTX_PROJECTION|G_MTX_MUL|G_MTX_NOPUSH);
+
+    gSPMatrix(glistp++, OS_K0_TO_PHYSICAL(&(dynamicp->translate)),
+	    G_MTX_MODELVIEW|G_MTX_LOAD|G_MTX_NOPUSH);
+    
+  gSPMatrix(glistp++,OS_K0_TO_PHYSICAL(&(dynamicp->modeling)),
+		G_MTX_MODELVIEW|G_MTX_MUL|G_MTX_NOPUSH);
+
+  
+    
   //gSPVertex(glistp++,&(shade_vtx[0]),4, 0);
   gSPVertex(glistp++,&(shade_vtx[0]),8, 0);
 
