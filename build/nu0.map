@@ -164,10 +164,10 @@ Archive member included to satisfy reference by file (symbol)
                               /usr/lib/n64/libultra_rom.a(initialize.o) (__osSiRawWriteIo)
 /usr/lib/n64/libultra_rom.a(cosf.o)
                               /usr/lib/n64/libultra_rom.a(rotate.o) (cosf)
-/usr/lib/n64/libultra_rom.a(frustum.o)
-                              build/src/main/stage00.o (guFrustum)
 /usr/lib/n64/libultra_rom.a(mtxutil.o)
                               /usr/lib/n64/libultra_rom.a(rotate.o) (guMtxF2L)
+/usr/lib/n64/libultra_rom.a(perspective.o)
+                              build/src/main/stage00.o (guPerspective)
 /usr/lib/n64/libultra_rom.a(sinf.o)
                               /usr/lib/n64/libultra_rom.a(rotate.o) (sinf)
 /usr/lib/n64/libultra_rom.a(vimodempallan1.o)
@@ -192,6 +192,8 @@ Archive member included to satisfy reference by file (symbol)
                               /usr/lib/n64/libultra_rom.a(exceptasm.o) (__osRcpImTable)
 /usr/lib/n64/libultra_rom.a(normalize.o)
                               /usr/lib/n64/libultra_rom.a(rotate.o) (guNormalize)
+/usr/lib/n64/libultra_rom.a(translate.o)
+                              build/src/main/stage00.o (guTranslate)
 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
                               /usr/lib/n64/libultra_rom.a(initialize.o) (osMapTLBRdb)
 /usr/lib/n64/libultra_rom.a(probetlb.o)
@@ -318,7 +320,7 @@ Discarded input sections
                 0x0000000000000000       0x18 build/src/main/graphic.o
  .pdr           0x0000000000000000       0x40 build/src/main/graphic.o
  .mdebug.abi32  0x0000000000000000        0x0 build/src/main/graphic.o
- .debug_info    0x0000000000000000      0xaa9 build/src/main/graphic.o
+ .debug_info    0x0000000000000000      0xab4 build/src/main/graphic.o
  .debug_abbrev  0x0000000000000000      0x207 build/src/main/graphic.o
  .debug_loclists
                 0x0000000000000000       0x9b build/src/main/graphic.o
@@ -327,7 +329,7 @@ Discarded input sections
  .debug_rnglists
                 0x0000000000000000      0x102 build/src/main/graphic.o
  .debug_line    0x0000000000000000      0x18f build/src/main/graphic.o
- .debug_str     0x0000000000000000      0x3e9 build/src/main/graphic.o
+ .debug_str     0x0000000000000000      0x3f3 build/src/main/graphic.o
  .comment       0x0000000000000000       0x13 build/src/main/graphic.o
  .debug_frame   0x0000000000000000       0x4c build/src/main/graphic.o
  .gnu.attributes
@@ -337,18 +339,18 @@ Discarded input sections
                 0x0000000000000000       0x18 build/src/main/stage00.o
  .pdr           0x0000000000000000       0x80 build/src/main/stage00.o
  .mdebug.abi32  0x0000000000000000        0x0 build/src/main/stage00.o
- .debug_info    0x0000000000000000      0xd33 build/src/main/stage00.o
- .debug_abbrev  0x0000000000000000      0x26f build/src/main/stage00.o
+ .debug_info    0x0000000000000000      0xd92 build/src/main/stage00.o
+ .debug_abbrev  0x0000000000000000      0x27e build/src/main/stage00.o
  .debug_loclists
                 0x0000000000000000       0xb1 build/src/main/stage00.o
  .debug_aranges
                 0x0000000000000000       0x20 build/src/main/stage00.o
  .debug_rnglists
                 0x0000000000000000       0xbc build/src/main/stage00.o
- .debug_line    0x0000000000000000      0x1a9 build/src/main/stage00.o
- .debug_str     0x0000000000000000      0x451 build/src/main/stage00.o
+ .debug_line    0x0000000000000000      0x1b0 build/src/main/stage00.o
+ .debug_str     0x0000000000000000      0x489 build/src/main/stage00.o
  .comment       0x0000000000000000       0x13 build/src/main/stage00.o
- .debug_frame   0x0000000000000000       0x70 build/src/main/stage00.o
+ .debug_frame   0x0000000000000000       0x6c build/src/main/stage00.o
  .gnu.attributes
                 0x0000000000000000       0x10 build/src/main/stage00.o
  .reginfo       0x0000000000000000       0x18 build/src/main/main.o
@@ -373,8 +375,8 @@ Discarded input sections
                 0x0000000000000000       0x18 build/src/main/gfxinit.o
  .pdr           0x0000000000000000        0x0 build/src/main/gfxinit.o
  .mdebug.abi32  0x0000000000000000        0x0 build/src/main/gfxinit.o
- .debug_info    0x0000000000000000      0x8b4 build/src/main/gfxinit.o
- .debug_abbrev  0x0000000000000000      0x141 build/src/main/gfxinit.o
+ .debug_info    0x0000000000000000      0x8b1 build/src/main/gfxinit.o
+ .debug_abbrev  0x0000000000000000      0x134 build/src/main/gfxinit.o
  .debug_aranges
                 0x0000000000000000       0x18 build/src/main/gfxinit.o
  .debug_line    0x0000000000000000       0x6d build/src/main/gfxinit.o
@@ -1752,23 +1754,6 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x2c /usr/lib/n64/libultra_rom.a(cosf.o)
  .gnu.attributes
                 0x0000000000000000       0x10 /usr/lib/n64/libultra_rom.a(cosf.o)
- .reginfo       0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(frustum.o)
- .MIPS.abiflags
-                0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(frustum.o)
- .pdr           0x0000000000000000       0x40 /usr/lib/n64/libultra_rom.a(frustum.o)
- .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/n64/libultra_rom.a(frustum.o)
- .debug_info    0x0000000000000000      0x31e /usr/lib/n64/libultra_rom.a(frustum.o)
- .debug_abbrev  0x0000000000000000      0x161 /usr/lib/n64/libultra_rom.a(frustum.o)
- .debug_loclists
-                0x0000000000000000      0x1a5 /usr/lib/n64/libultra_rom.a(frustum.o)
- .debug_aranges
-                0x0000000000000000       0x20 /usr/lib/n64/libultra_rom.a(frustum.o)
- .debug_line    0x0000000000000000      0x15e /usr/lib/n64/libultra_rom.a(frustum.o)
- .debug_str     0x0000000000000000      0x1c4 /usr/lib/n64/libultra_rom.a(frustum.o)
- .comment       0x0000000000000000       0x13 /usr/lib/n64/libultra_rom.a(frustum.o)
- .debug_frame   0x0000000000000000       0x78 /usr/lib/n64/libultra_rom.a(frustum.o)
- .gnu.attributes
-                0x0000000000000000       0x10 /usr/lib/n64/libultra_rom.a(frustum.o)
  .reginfo       0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(mtxutil.o)
  .MIPS.abiflags
                 0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(mtxutil.o)
@@ -1786,6 +1771,23 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x5c /usr/lib/n64/libultra_rom.a(mtxutil.o)
  .gnu.attributes
                 0x0000000000000000       0x10 /usr/lib/n64/libultra_rom.a(mtxutil.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .pdr           0x0000000000000000       0x40 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .debug_info    0x0000000000000000      0x382 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .debug_abbrev  0x0000000000000000      0x188 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .debug_loclists
+                0x0000000000000000      0x1f8 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .debug_line    0x0000000000000000      0x1a0 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .debug_str     0x0000000000000000      0x1f5 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .comment       0x0000000000000000       0x13 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .debug_frame   0x0000000000000000       0x70 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .gnu.attributes
+                0x0000000000000000       0x10 /usr/lib/n64/libultra_rom.a(perspective.o)
  .reginfo       0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(sinf.o)
  .MIPS.abiflags
                 0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(sinf.o)
@@ -1960,6 +1962,20 @@ Discarded input sections
  .debug_str     0x0000000000000000       0x56 /usr/lib/n64/libultra_rom.a(normalize.o)
  .gnu.attributes
                 0x0000000000000000       0x10 /usr/lib/n64/libultra_rom.a(normalize.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(translate.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(translate.o)
+ .pdr           0x0000000000000000       0x20 /usr/lib/n64/libultra_rom.a(translate.o)
+ .debug_line    0x0000000000000000       0x79 /usr/lib/n64/libultra_rom.a(translate.o)
+ .debug_line_str
+                0x0000000000000000       0x3e /usr/lib/n64/libultra_rom.a(translate.o)
+ .debug_info    0x0000000000000000       0x31 /usr/lib/n64/libultra_rom.a(translate.o)
+ .debug_abbrev  0x0000000000000000       0x21 /usr/lib/n64/libultra_rom.a(translate.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/n64/libultra_rom.a(translate.o)
+ .debug_str     0x0000000000000000       0x56 /usr/lib/n64/libultra_rom.a(translate.o)
+ .gnu.attributes
+                0x0000000000000000       0x10 /usr/lib/n64/libultra_rom.a(translate.o)
  .reginfo       0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
  .MIPS.abiflags
                 0x0000000000000000       0x18 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
@@ -2555,7 +2571,7 @@ Name             Origin             Length             Attributes
 
 Linker script and memory map
 
-                0x0000000000014c50                __romPos = 0x0
+                0x0000000000014de0                __romPos = 0x0
                 0x0000000004000000                _bootSegmentStart = ADDR (.boot)
                 0x0000000000000000                _bootSegmentRomStart = __romPos
 
@@ -2568,12 +2584,12 @@ Linker script and memory map
                 0x0000000004001000                _binary__usr_lib_n64_PR_bootcode_boot_6102_end
                 0x0000000004001000                _bootSegmentEnd = ALIGN ((ADDR (.boot) + SIZEOF (.boot)), 0x10)
                 0x0000000000001000                _bootSegmentRomEnd = ((_bootSegmentEnd - _bootSegmentStart) + _bootSegmentRomStart)
-                0x0000000000014c50                __romPos = _bootSegmentRomEnd
+                0x0000000000014de0                __romPos = _bootSegmentRomEnd
                 0x0000000004001000                . = _bootSegmentEnd
                 0x0000000080025c00                _codeSegmentStart = ADDR (.code)
                 0x0000000000001000                _codeSegmentRomStart = __romPos
 
-.code           0x0000000080025c00    0x13c4c load address 0x0000000000001000
+.code           0x0000000080025c00    0x13ddc load address 0x0000000000001000
  build/asm/entry.o(.start)
  .start         0x0000000080025c00       0x3c build/asm/entry.o
                 0x0000000080025c00                __start
@@ -2585,952 +2601,960 @@ Linker script and memory map
  .text          0x0000000080025d30      0x140 build/src/main/graphic.o
                 0x0000000080025d30                gfxRCPInit
                 0x0000000080025d74                gfxClearCfb
- .text          0x0000000080025e70      0x1fc build/src/main/stage00.o
+ .text          0x0000000080025e70      0x224 build/src/main/stage00.o
                 0x0000000080025e70                initStage00
-                0x0000000080025e7c                updateGame00
-                0x0000000080025e98                shadetri
-                0x0000000080025f78                makeDL00
- *fill*         0x000000008002606c        0x4 
- .text          0x0000000080026070       0x6c build/src/main/main.o
-                0x0000000080026070                stage00
-                0x000000008002609c                mainproc
- *fill*         0x00000000800260dc        0x4 
- .text          0x00000000800260e0        0x0 build/src/main/gfxinit.o
+                0x0000000080025e8c                updateGame00
+                0x0000000080025ea8                shadetri
+                0x0000000080025f88                makeDL00
+ *fill*         0x0000000080026094        0xc 
+ .text          0x00000000800260a0       0x6c build/src/main/main.o
+                0x00000000800260a0                stage00
+                0x00000000800260cc                mainproc
+ *fill*         0x000000008002610c        0x4 
+ .text          0x0000000080026110        0x0 build/src/main/gfxinit.o
  */libultra_rom.a:*.o(.text)
- .text          0x00000000800260e0      0x2c0 /usr/lib/n64/libultra_rom.a(motor.o)
-                0x00000000800260e0                __osMotorAccess
-                0x00000000800261f4                osMotorInit
- .text          0x00000000800263a0        0x8 /usr/lib/n64/libultra_rom.a(afterprenmi.o)
-                0x00000000800263a0                osAfterPreNMI
- *fill*         0x00000000800263a8        0x8 
- .text          0x00000000800263b0      0x240 /usr/lib/n64/libultra_rom.a(initialize.o)
-                0x00000000800263b0                __createSpeedParam
-                0x0000000080026414                osInitialize
-                0x00000000800265e8                osInitialize_isv
- .text          0x00000000800265f0      0x1f0 /usr/lib/n64/libultra_rom.a(contramread.o)
-                0x00000000800265f0                __osContRamRead
- .text          0x00000000800267e0      0x3bc /usr/lib/n64/libultra_rom.a(pfsallocatefile.o)
-                0x00000000800267e0                __osPfsDeclearPage
-                0x00000000800268d0                osPfsAllocateFile
- *fill*         0x0000000080026b9c        0x4 
- .text          0x0000000080026ba0      0x1c8 /usr/lib/n64/libultra_rom.a(pfsdeletefile.o)
-                0x0000000080026ba0                __osPfsReleasePages
-                0x0000000080026bf0                osPfsDeleteFile
- *fill*         0x0000000080026d68        0x8 
- .text          0x0000000080026d70      0x190 /usr/lib/n64/libultra_rom.a(pfsfilestate.o)
-                0x0000000080026d70                osPfsFileState
- .text          0x0000000080026f00       0xf0 /usr/lib/n64/libultra_rom.a(pfsfreeblocks.o)
-                0x0000000080026f00                osPfsFreeBlocks
- .text          0x0000000080026ff0      0x1a8 /usr/lib/n64/libultra_rom.a(pfsgetstatus.o)
-                0x0000000080026ff0                __osPfsRequestOneChannel
-                0x0000000080027064                __osPfsGetOneChannelData
-                0x00000000800270bc                __osPfsGetStatus
- *fill*         0x0000000080027198        0x8 
- .text          0x00000000800271a0      0x264 /usr/lib/n64/libultra_rom.a(pfsinitpak.o)
-                0x00000000800271a0                osPfsInitPak
- *fill*         0x0000000080027404        0xc 
- .text          0x0000000080027410      0x244 /usr/lib/n64/libultra_rom.a(pfsisplug.o)
-                0x0000000080027410                __osPfsRequestData
-                0x000000008002748c                __osPfsGetInitData
-                0x0000000080027504                osPfsIsPlug
- *fill*         0x0000000080027654        0xc 
- .text          0x0000000080027660       0xf4 /usr/lib/n64/libultra_rom.a(pfsnumfiles.o)
-                0x0000000080027660                osPfsNumFiles
- *fill*         0x0000000080027754        0xc 
- .text          0x0000000080027760      0x388 /usr/lib/n64/libultra_rom.a(pfsreadwritefile.o)
-                0x0000000080027818                osPfsReadWriteFile
- *fill*         0x0000000080027ae8        0x8 
- .text          0x0000000080027af0       0x54 /usr/lib/n64/libultra_rom.a(pfsrepairid.o)
-                0x0000000080027af0                osPfsRepairId
- *fill*         0x0000000080027b44        0xc 
- .text          0x0000000080027b50      0x154 /usr/lib/n64/libultra_rom.a(pfssearchfile.o)
-                0x0000000080027b50                osPfsFindFile
- *fill*         0x0000000080027ca4        0xc 
- .text          0x0000000080027cb0       0x68 /usr/lib/n64/libultra_rom.a(pfsselectbank.o)
-                0x0000000080027cb0                __osPfsSelectBank
- *fill*         0x0000000080027d18        0x8 
- .text          0x0000000080027d20      0x128 /usr/lib/n64/libultra_rom.a(cartrominit.o)
-                0x0000000080027d20                osCartRomInit
- *fill*         0x0000000080027e48        0x8 
- .text          0x0000000080027e50       0x9c /usr/lib/n64/libultra_rom.a(piacs.o)
-                0x0000000080027e50                __osPiCreateAccessQueue
-                0x0000000080027e9c                __osPiGetAccess
-                0x0000000080027ed8                __osPiRelAccess
- *fill*         0x0000000080027eec        0x4 
- .text          0x0000000080027ef0      0x188 /usr/lib/n64/libultra_rom.a(pimgr.o)
-                0x0000000080027ef0                osCreatePiManager
- *fill*         0x0000000080028078        0x8 
- .text          0x0000000080028080       0xbc /usr/lib/n64/libultra_rom.a(pirawdma.o)
-                0x0000000080028080                __osPiRawStartDma
- *fill*         0x000000008002813c        0x4 
- .text          0x0000000080028140      0x1a0 /usr/lib/n64/libultra_rom.a(rotate.o)
-                0x0000000080028140                guRotateF
-                0x00000000800282a4                guRotate
- .text          0x00000000800282e0       0xb4 /usr/lib/n64/libultra_rom.a(createthread.o)
-                0x00000000800282e0                osCreateThread
- *fill*         0x0000000080028394        0xc 
- .text          0x00000000800283a0       0x18 /usr/lib/n64/libultra_rom.a(getthreadpri.o)
-                0x00000000800283a0                osGetThreadPri
- *fill*         0x00000000800283b8        0x8 
- .text          0x00000000800283c0       0xc0 /usr/lib/n64/libultra_rom.a(setthreadpri.o)
-                0x00000000800283c0                osSetThreadPri
- .text          0x0000000080028480      0x104 /usr/lib/n64/libultra_rom.a(startthread.o)
-                0x0000000080028480                osStartThread
- *fill*         0x0000000080028584        0xc 
- .text          0x0000000080028590       0x8c /usr/lib/n64/libultra_rom.a(stopthread.o)
-                0x0000000080028590                osStopThread
- *fill*         0x000000008002861c        0x4 
- .text          0x0000000080028620       0x30 /usr/lib/n64/libultra_rom.a(thread.o)
-                0x0000000080028620                __osDequeueThread
- .text          0x0000000080028650       0x28 /usr/lib/n64/libultra_rom.a(spsetpc.o)
-                0x0000000080028650                __osSpSetPc
- *fill*         0x0000000080028678        0x8 
- .text          0x0000000080028680      0x1fc /usr/lib/n64/libultra_rom.a(sptask.o)
-                0x0000000080028680                osSpTaskLoad
-                0x0000000080028858                osSpTaskStartGo
- *fill*         0x000000008002887c        0x4 
- .text          0x0000000080028880        0x8 /usr/lib/n64/libultra_rom.a(sptaskyield.o)
-                0x0000000080028880                osSpTaskYield
- *fill*         0x0000000080028888        0x8 
- .text          0x0000000080028890       0x4c /usr/lib/n64/libultra_rom.a(sptaskyielded.o)
-                0x0000000080028890                osSpTaskYielded
- *fill*         0x00000000800288dc        0x4 
- .text          0x00000000800288e0       0x7c /usr/lib/n64/libultra_rom.a(string.o)
-                0x00000000800288e0                strchr
-                0x0000000080028918                strlen
-                0x0000000080028930                memcpy
- *fill*         0x000000008002895c        0x4 
- .text          0x0000000080028960       0x24 /usr/lib/n64/libultra_rom.a(createmesgqueue.o)
-                0x0000000080028960                osCreateMesgQueue
- *fill*         0x0000000080028984        0xc 
- .text          0x0000000080028990       0xf8 /usr/lib/n64/libultra_rom.a(recvmesg.o)
-                0x0000000080028990                osRecvMesg
- *fill*         0x0000000080028a88        0x8 
- .text          0x0000000080028a90      0x10c /usr/lib/n64/libultra_rom.a(sendmesg.o)
-                0x0000000080028a90                osSendMesg
- *fill*         0x0000000080028b9c        0x4 
- .text          0x0000000080028ba0       0xa0 /usr/lib/n64/libultra_rom.a(seteventmesg.o)
-                0x0000000080028ba0                osSetEventMesg
- .text          0x0000000080028c40       0x4c /usr/lib/n64/libultra_rom.a(virtualtophysical.o)
-                0x0000000080028c40                osVirtualToPhysical
- *fill*         0x0000000080028c8c        0x4 
- .text          0x0000000080028c90       0x48 /usr/lib/n64/libultra_rom.a(viblack.o)
-                0x0000000080028c90                osViBlack
- *fill*         0x0000000080028cd8        0x8 
- .text          0x0000000080028ce0       0xbc /usr/lib/n64/libultra_rom.a(vi.o)
-                0x0000000080028ce0                __osViInit
- *fill*         0x0000000080028d9c        0x4 
- .text          0x0000000080028da0       0x38 /usr/lib/n64/libultra_rom.a(vigetcurrframebuf.o)
-                0x0000000080028da0                osViGetCurrentFramebuffer
- *fill*         0x0000000080028dd8        0x8 
- .text          0x0000000080028de0       0x38 /usr/lib/n64/libultra_rom.a(vigetnextframebuf.o)
-                0x0000000080028de0                osViGetNextFramebuffer
- *fill*         0x0000000080028e18        0x8 
- .text          0x0000000080028e20      0x2a4 /usr/lib/n64/libultra_rom.a(vimgr.o)
-                0x0000000080028f40                osCreateViManager
- *fill*         0x00000000800290c4        0xc 
- .text          0x00000000800290d0       0x54 /usr/lib/n64/libultra_rom.a(visetevent.o)
-                0x00000000800290d0                osViSetEvent
- *fill*         0x0000000080029124        0xc 
- .text          0x0000000080029130       0x44 /usr/lib/n64/libultra_rom.a(visetmode.o)
-                0x0000000080029130                osViSetMode
- *fill*         0x0000000080029174        0xc 
- .text          0x0000000080029180      0x124 /usr/lib/n64/libultra_rom.a(visetspecial.o)
-                0x0000000080029180                osViSetSpecialFeatures
- *fill*         0x00000000800292a4        0xc 
- .text          0x00000000800292b0       0x40 /usr/lib/n64/libultra_rom.a(visetyscale.o)
-                0x00000000800292b0                osViSetYScale
- .text          0x00000000800292f0       0x40 /usr/lib/n64/libultra_rom.a(viswapbuf.o)
-                0x00000000800292f0                osViSwapBuffer
- .text          0x0000000080029330      0x214 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
-                0x0000000080029330                __osViSwapContext
- *fill*         0x0000000080029544        0xc 
- .text          0x0000000080029550        0x0 /usr/lib/n64/libultra_rom.a(vitbl.o)
- .text          0x0000000080029550      0x29c /usr/lib/n64/libultra_rom.a(timerintr.o)
-                0x0000000080029550                __osTimerServicesInit
-                0x00000000800295a0                __osSetTimerIntr
-                0x0000000080029608                __osInsertTimer
-                0x00000000800296e4                __osTimerInterrupt
- *fill*         0x00000000800297ec        0x4 
- .text          0x00000000800297f0       0xec /usr/lib/n64/libultra_rom.a(crc.o)
-                0x00000000800297f0                __osContAddressCrc
-                0x000000008002985c                __osContDataCrc
- *fill*         0x00000000800298dc        0x4 
- .text          0x00000000800298e0       0x9c /usr/lib/n64/libultra_rom.a(siacs.o)
-                0x00000000800298e0                __osSiCreateAccessQueue
-                0x000000008002992c                __osSiGetAccess
-                0x0000000080029968                __osSiRelAccess
- *fill*         0x000000008002997c        0x4 
- .text          0x0000000080029980       0xac /usr/lib/n64/libultra_rom.a(sirawdma.o)
-                0x0000000080029980                __osSiRawStartDma
- *fill*         0x0000000080029a2c        0x4 
- .text          0x0000000080029a30       0x4c /usr/lib/n64/libultra_rom.a(sirawread.o)
-                0x0000000080029a30                __osSiRawReadIo
- *fill*         0x0000000080029a7c        0x4 
- .text          0x0000000080029a80       0x48 /usr/lib/n64/libultra_rom.a(sirawwrite.o)
-                0x0000000080029a80                __osSiRawWriteIo
- *fill*         0x0000000080029ac8        0x8 
- .text          0x0000000080029ad0      0x134 /usr/lib/n64/libultra_rom.a(cosf.o)
-                0x0000000080029ad0                fcos
-                0x0000000080029ad0                cosf
-                0x0000000080029ad0                __cosf
- *fill*         0x0000000080029c04        0xc 
- .text          0x0000000080029c10      0x168 /usr/lib/n64/libultra_rom.a(frustum.o)
-                0x0000000080029c10                guFrustumF
-                0x0000000080029d24                guFrustum
- *fill*         0x0000000080029d78        0x8 
- .text          0x0000000080029d80      0x1c0 /usr/lib/n64/libultra_rom.a(mtxutil.o)
-                0x0000000080029d80                guMtxF2L
-                0x0000000080029e24                guMtxL2F
-                0x0000000080029ec8                guMtxIdentF
-                0x0000000080029f18                guMtxIdent
- .text          0x0000000080029f40      0x178 /usr/lib/n64/libultra_rom.a(sinf.o)
-                0x0000000080029f40                fsin
-                0x0000000080029f40                __sinf
-                0x0000000080029f40                sinf
- *fill*         0x000000008002a0b8        0x8 
- .text          0x000000008002a0c0        0x0 /usr/lib/n64/libultra_rom.a(vimodempallan1.o)
- .text          0x000000008002a0c0        0x0 /usr/lib/n64/libultra_rom.a(vimodentsclan1.o)
- .text          0x000000008002a0c0        0x0 /usr/lib/n64/libultra_rom.a(vimodepallan1.o)
- .text          0x000000008002a0c0       0xa4 /usr/lib/n64/libultra_rom.a(contquery.o)
-                0x000000008002a0c0                osContStartQuery
-                0x000000008002a144                osContGetQuery
- *fill*         0x000000008002a164        0xc 
- .text          0x000000008002a170      0x164 /usr/lib/n64/libultra_rom.a(contreaddata.o)
-                0x000000008002a170                osContStartReadData
-                0x000000008002a274                osContGetReadData
- *fill*         0x000000008002a2d4        0xc 
- .text          0x000000008002a2e0      0x270 /usr/lib/n64/libultra_rom.a(controller.o)
-                0x000000008002a2e0                __osContGetInitData
-                0x000000008002a358                __osPackRequestData
-                0x000000008002a3e4                osContInit
- .text          0x000000008002a550       0x60 /usr/lib/n64/libultra_rom.a(parameters.o)
- .text          0x000000008002a5b0      0x964 /usr/lib/n64/libultra_rom.a(exceptasm.o)
-                0x000000008002a5b0                __osExceptionPreamble
-                0x000000008002a5c0                __osException
-                0x000000008002ab3c                send_mesg
-                0x000000008002abf4                handle_CpU
-                0x000000008002ac28                __osEnqueueAndYield
-                0x000000008002ad2c                __osEnqueueThread
-                0x000000008002ad74                __osPopThread
-                0x000000008002ad84                __osNop
-                0x000000008002ad8c                __osDispatchThread
-                0x000000008002af08                __osCleanupThread
- *fill*         0x000000008002af14        0xc 
- .text          0x000000008002af20       0x8c /usr/lib/n64/libultra_rom.a(interrupt.o)
-                0x000000008002af20                __osDisableInt
-                0x000000008002af90                __osRestoreInt
- *fill*         0x000000008002afac        0x4 
- .text          0x000000008002afb0       0xa0 /usr/lib/n64/libultra_rom.a(setintmask.o)
-                0x000000008002afb0                osSetIntMask
- .text          0x000000008002b050       0x60 /usr/lib/n64/libultra_rom.a(normalize.o)
-                0x000000008002b050                guNormalize
- .text          0x000000008002b0b0       0x58 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
-                0x000000008002b0b0                osMapTLBRdb
- *fill*         0x000000008002b108        0x8 
- .text          0x000000008002b110       0xb8 /usr/lib/n64/libultra_rom.a(probetlb.o)
-                0x000000008002b110                __osProbeTLB
- *fill*         0x000000008002b1c8        0x8 
- .text          0x000000008002b1d0       0x44 /usr/lib/n64/libultra_rom.a(unmaptlball.o)
-                0x000000008002b1d0                osUnmapTLBAll
- *fill*         0x000000008002b214        0xc 
- .text          0x000000008002b220        0xc /usr/lib/n64/libultra_rom.a(getcause.o)
-                0x000000008002b220                __osGetCause
- *fill*         0x000000008002b22c        0x4 
- .text          0x000000008002b230        0xc /usr/lib/n64/libultra_rom.a(getcount.o)
-                0x000000008002b230                osGetCount
- *fill*         0x000000008002b23c        0x4 
- .text          0x000000008002b240        0xc /usr/lib/n64/libultra_rom.a(getsr.o)
-                0x000000008002b240                __osGetSR
- *fill*         0x000000008002b24c        0x4 
- .text          0x000000008002b250        0xc /usr/lib/n64/libultra_rom.a(setcompare.o)
-                0x000000008002b250                __osSetCompare
- *fill*         0x000000008002b25c        0x4 
- .text          0x000000008002b260       0x10 /usr/lib/n64/libultra_rom.a(setfpccsr.o)
-                0x000000008002b260                __osSetFpcCsr
- .text          0x000000008002b270       0x10 /usr/lib/n64/libultra_rom.a(setsr.o)
-                0x000000008002b270                __osSetSR
- .text          0x000000008002b280       0x10 /usr/lib/n64/libultra_rom.a(setwatchlo.o)
-                0x000000008002b280                __osSetWatchLo
- .text          0x000000008002b290      0x110 /usr/lib/n64/libultra_rom.a(bcmp.o)
-                0x000000008002b290                bcmp
- .text          0x000000008002b3a0      0x31c /usr/lib/n64/libultra_rom.a(bcopy.o)
-                0x000000008002b3a0                bcopy
- *fill*         0x000000008002b6bc        0x4 
- .text          0x000000008002b6c0       0xa0 /usr/lib/n64/libultra_rom.a(bzero.o)
-                0x000000008002b6c0                bzero
- .text          0x000000008002b760        0x0 /usr/lib/n64/libultra_rom.a(libm_vals.o)
- .text          0x000000008002b760       0xb0 /usr/lib/n64/libultra_rom.a(invaldcache.o)
-                0x000000008002b760                osInvalDCache
- .text          0x000000008002b810       0x74 /usr/lib/n64/libultra_rom.a(invalicache.o)
-                0x000000008002b810                osInvalICache
- *fill*         0x000000008002b884        0xc 
- .text          0x000000008002b890       0x28 /usr/lib/n64/libultra_rom.a(writebackdcacheall.o)
-                0x000000008002b890                osWritebackDCacheAll
- *fill*         0x000000008002b8b8        0x8 
- .text          0x000000008002b8c0       0x74 /usr/lib/n64/libultra_rom.a(writebackdcache.o)
-                0x000000008002b8c0                osWritebackDCache
- *fill*         0x000000008002b934        0xc 
- .text          0x000000008002b940      0x914 /usr/lib/n64/libultra_rom.a(contpfs.o)
-                0x000000008002b940                __osSumcalc
-                0x000000008002b96c                __osIdCheckSum
-                0x000000008002b9b0                __osRepairPackId
-                0x000000008002bc4c                __osCheckPackId
-                0x000000008002bd94                __osGetId
-                0x000000008002bf0c                __osCheckId
-                0x000000008002bfbc                __osPfsRWInode
- *fill*         0x000000008002c254        0xc 
- .text          0x000000008002c260      0x1f8 /usr/lib/n64/libultra_rom.a(contramwrite.o)
-                0x000000008002c260                __osContRamWrite
- *fill*         0x000000008002c458        0x8 
- .text          0x000000008002c460      0x630 /usr/lib/n64/libultra_rom.a(pfschecker.o)
-                0x000000008002c460                corrupted_init
-                0x000000008002c58c                corrupted
-                0x000000008002c6b4                osPfsChecker
- .text          0x000000008002ca90      0x384 /usr/lib/n64/libultra_rom.a(devmgr.o)
-                0x000000008002ca90                __osDevMgrMain
- *fill*         0x000000008002ce14        0xc 
- .text          0x000000008002ce20      0x1b0 /usr/lib/n64/libultra_rom.a(epirawdma.o)
-                0x000000008002ce20                __osEPiRawStartDma
- .text          0x000000008002cfd0      0x130 /usr/lib/n64/libultra_rom.a(epirawread.o)
-                0x000000008002cfd0                __osEPiRawReadIo
- .text          0x000000008002d100      0x12c /usr/lib/n64/libultra_rom.a(epirawwrite.o)
-                0x000000008002d100                __osEPiRawWriteIo
- *fill*         0x000000008002d22c        0x4 
- .text          0x000000008002d230       0x40 /usr/lib/n64/libultra_rom.a(resetglobalintmask.o)
-                0x000000008002d230                __osResetGlobalIntMask
- .text          0x000000008002d270       0x38 /usr/lib/n64/libultra_rom.a(setglobalintmask.o)
-                0x000000008002d270                __osSetGlobalIntMask
- *fill*         0x000000008002d2a8        0x8 
- .text          0x000000008002d2b0        0x0 /usr/lib/n64/libultra_rom.a(kdebugserver.o)
- .text          0x000000008002d2b0       0xb8 /usr/lib/n64/libultra_rom.a(destroythread.o)
-                0x000000008002d2b0                osDestroyThread
- *fill*         0x000000008002d368        0x8 
- .text          0x000000008002d370       0x44 /usr/lib/n64/libultra_rom.a(yieldthread.o)
-                0x000000008002d370                osYieldThread
- *fill*         0x000000008002d3b4        0xc 
- .text          0x000000008002d3c0       0x14 /usr/lib/n64/libultra_rom.a(sp.o)
-                0x000000008002d3c0                __osSpDeviceBusy
- *fill*         0x000000008002d3d4        0xc 
- .text          0x000000008002d3e0       0x10 /usr/lib/n64/libultra_rom.a(spgetstat.o)
-                0x000000008002d3e0                __osSpGetStatus
- .text          0x000000008002d3f0       0x94 /usr/lib/n64/libultra_rom.a(sprawdma.o)
-                0x000000008002d3f0                __osSpRawStartDma
- *fill*         0x000000008002d484        0xc 
- .text          0x000000008002d490       0x10 /usr/lib/n64/libultra_rom.a(spsetstat.o)
-                0x000000008002d490                __osSpSetStatus
- .text          0x000000008002d4a0        0xc /usr/lib/n64/libultra_rom.a(vigetcurrcontext.o)
-                0x000000008002d4a0                __osViGetCurrentContext
- *fill*         0x000000008002d4ac        0x4 
- .text          0x000000008002d4b0       0x6c /usr/lib/n64/libultra_rom.a(gettime.o)
-                0x000000008002d4b0                osGetTime
- *fill*         0x000000008002d51c        0x4 
- .text          0x000000008002d520      0x110 /usr/lib/n64/libultra_rom.a(settimer.o)
-                0x000000008002d520                osSetTimer
- .text          0x000000008002d630       0x14 /usr/lib/n64/libultra_rom.a(si.o)
-                0x000000008002d630                __osSiDeviceBusy
+ .text          0x0000000080026110      0x2c0 /usr/lib/n64/libultra_rom.a(motor.o)
+                0x0000000080026110                __osMotorAccess
+                0x0000000080026224                osMotorInit
+ .text          0x00000000800263d0        0x8 /usr/lib/n64/libultra_rom.a(afterprenmi.o)
+                0x00000000800263d0                osAfterPreNMI
+ *fill*         0x00000000800263d8        0x8 
+ .text          0x00000000800263e0      0x240 /usr/lib/n64/libultra_rom.a(initialize.o)
+                0x00000000800263e0                __createSpeedParam
+                0x0000000080026444                osInitialize
+                0x0000000080026618                osInitialize_isv
+ .text          0x0000000080026620      0x1f0 /usr/lib/n64/libultra_rom.a(contramread.o)
+                0x0000000080026620                __osContRamRead
+ .text          0x0000000080026810      0x3bc /usr/lib/n64/libultra_rom.a(pfsallocatefile.o)
+                0x0000000080026810                __osPfsDeclearPage
+                0x0000000080026900                osPfsAllocateFile
+ *fill*         0x0000000080026bcc        0x4 
+ .text          0x0000000080026bd0      0x1c8 /usr/lib/n64/libultra_rom.a(pfsdeletefile.o)
+                0x0000000080026bd0                __osPfsReleasePages
+                0x0000000080026c20                osPfsDeleteFile
+ *fill*         0x0000000080026d98        0x8 
+ .text          0x0000000080026da0      0x190 /usr/lib/n64/libultra_rom.a(pfsfilestate.o)
+                0x0000000080026da0                osPfsFileState
+ .text          0x0000000080026f30       0xf0 /usr/lib/n64/libultra_rom.a(pfsfreeblocks.o)
+                0x0000000080026f30                osPfsFreeBlocks
+ .text          0x0000000080027020      0x1a8 /usr/lib/n64/libultra_rom.a(pfsgetstatus.o)
+                0x0000000080027020                __osPfsRequestOneChannel
+                0x0000000080027094                __osPfsGetOneChannelData
+                0x00000000800270ec                __osPfsGetStatus
+ *fill*         0x00000000800271c8        0x8 
+ .text          0x00000000800271d0      0x264 /usr/lib/n64/libultra_rom.a(pfsinitpak.o)
+                0x00000000800271d0                osPfsInitPak
+ *fill*         0x0000000080027434        0xc 
+ .text          0x0000000080027440      0x244 /usr/lib/n64/libultra_rom.a(pfsisplug.o)
+                0x0000000080027440                __osPfsRequestData
+                0x00000000800274bc                __osPfsGetInitData
+                0x0000000080027534                osPfsIsPlug
+ *fill*         0x0000000080027684        0xc 
+ .text          0x0000000080027690       0xf4 /usr/lib/n64/libultra_rom.a(pfsnumfiles.o)
+                0x0000000080027690                osPfsNumFiles
+ *fill*         0x0000000080027784        0xc 
+ .text          0x0000000080027790      0x388 /usr/lib/n64/libultra_rom.a(pfsreadwritefile.o)
+                0x0000000080027848                osPfsReadWriteFile
+ *fill*         0x0000000080027b18        0x8 
+ .text          0x0000000080027b20       0x54 /usr/lib/n64/libultra_rom.a(pfsrepairid.o)
+                0x0000000080027b20                osPfsRepairId
+ *fill*         0x0000000080027b74        0xc 
+ .text          0x0000000080027b80      0x154 /usr/lib/n64/libultra_rom.a(pfssearchfile.o)
+                0x0000000080027b80                osPfsFindFile
+ *fill*         0x0000000080027cd4        0xc 
+ .text          0x0000000080027ce0       0x68 /usr/lib/n64/libultra_rom.a(pfsselectbank.o)
+                0x0000000080027ce0                __osPfsSelectBank
+ *fill*         0x0000000080027d48        0x8 
+ .text          0x0000000080027d50      0x128 /usr/lib/n64/libultra_rom.a(cartrominit.o)
+                0x0000000080027d50                osCartRomInit
+ *fill*         0x0000000080027e78        0x8 
+ .text          0x0000000080027e80       0x9c /usr/lib/n64/libultra_rom.a(piacs.o)
+                0x0000000080027e80                __osPiCreateAccessQueue
+                0x0000000080027ecc                __osPiGetAccess
+                0x0000000080027f08                __osPiRelAccess
+ *fill*         0x0000000080027f1c        0x4 
+ .text          0x0000000080027f20      0x188 /usr/lib/n64/libultra_rom.a(pimgr.o)
+                0x0000000080027f20                osCreatePiManager
+ *fill*         0x00000000800280a8        0x8 
+ .text          0x00000000800280b0       0xbc /usr/lib/n64/libultra_rom.a(pirawdma.o)
+                0x00000000800280b0                __osPiRawStartDma
+ *fill*         0x000000008002816c        0x4 
+ .text          0x0000000080028170      0x1a0 /usr/lib/n64/libultra_rom.a(rotate.o)
+                0x0000000080028170                guRotateF
+                0x00000000800282d4                guRotate
+ .text          0x0000000080028310       0xb4 /usr/lib/n64/libultra_rom.a(createthread.o)
+                0x0000000080028310                osCreateThread
+ *fill*         0x00000000800283c4        0xc 
+ .text          0x00000000800283d0       0x18 /usr/lib/n64/libultra_rom.a(getthreadpri.o)
+                0x00000000800283d0                osGetThreadPri
+ *fill*         0x00000000800283e8        0x8 
+ .text          0x00000000800283f0       0xc0 /usr/lib/n64/libultra_rom.a(setthreadpri.o)
+                0x00000000800283f0                osSetThreadPri
+ .text          0x00000000800284b0      0x104 /usr/lib/n64/libultra_rom.a(startthread.o)
+                0x00000000800284b0                osStartThread
+ *fill*         0x00000000800285b4        0xc 
+ .text          0x00000000800285c0       0x8c /usr/lib/n64/libultra_rom.a(stopthread.o)
+                0x00000000800285c0                osStopThread
+ *fill*         0x000000008002864c        0x4 
+ .text          0x0000000080028650       0x30 /usr/lib/n64/libultra_rom.a(thread.o)
+                0x0000000080028650                __osDequeueThread
+ .text          0x0000000080028680       0x28 /usr/lib/n64/libultra_rom.a(spsetpc.o)
+                0x0000000080028680                __osSpSetPc
+ *fill*         0x00000000800286a8        0x8 
+ .text          0x00000000800286b0      0x1fc /usr/lib/n64/libultra_rom.a(sptask.o)
+                0x00000000800286b0                osSpTaskLoad
+                0x0000000080028888                osSpTaskStartGo
+ *fill*         0x00000000800288ac        0x4 
+ .text          0x00000000800288b0        0x8 /usr/lib/n64/libultra_rom.a(sptaskyield.o)
+                0x00000000800288b0                osSpTaskYield
+ *fill*         0x00000000800288b8        0x8 
+ .text          0x00000000800288c0       0x4c /usr/lib/n64/libultra_rom.a(sptaskyielded.o)
+                0x00000000800288c0                osSpTaskYielded
+ *fill*         0x000000008002890c        0x4 
+ .text          0x0000000080028910       0x7c /usr/lib/n64/libultra_rom.a(string.o)
+                0x0000000080028910                strchr
+                0x0000000080028948                strlen
+                0x0000000080028960                memcpy
+ *fill*         0x000000008002898c        0x4 
+ .text          0x0000000080028990       0x24 /usr/lib/n64/libultra_rom.a(createmesgqueue.o)
+                0x0000000080028990                osCreateMesgQueue
+ *fill*         0x00000000800289b4        0xc 
+ .text          0x00000000800289c0       0xf8 /usr/lib/n64/libultra_rom.a(recvmesg.o)
+                0x00000000800289c0                osRecvMesg
+ *fill*         0x0000000080028ab8        0x8 
+ .text          0x0000000080028ac0      0x10c /usr/lib/n64/libultra_rom.a(sendmesg.o)
+                0x0000000080028ac0                osSendMesg
+ *fill*         0x0000000080028bcc        0x4 
+ .text          0x0000000080028bd0       0xa0 /usr/lib/n64/libultra_rom.a(seteventmesg.o)
+                0x0000000080028bd0                osSetEventMesg
+ .text          0x0000000080028c70       0x4c /usr/lib/n64/libultra_rom.a(virtualtophysical.o)
+                0x0000000080028c70                osVirtualToPhysical
+ *fill*         0x0000000080028cbc        0x4 
+ .text          0x0000000080028cc0       0x48 /usr/lib/n64/libultra_rom.a(viblack.o)
+                0x0000000080028cc0                osViBlack
+ *fill*         0x0000000080028d08        0x8 
+ .text          0x0000000080028d10       0xbc /usr/lib/n64/libultra_rom.a(vi.o)
+                0x0000000080028d10                __osViInit
+ *fill*         0x0000000080028dcc        0x4 
+ .text          0x0000000080028dd0       0x38 /usr/lib/n64/libultra_rom.a(vigetcurrframebuf.o)
+                0x0000000080028dd0                osViGetCurrentFramebuffer
+ *fill*         0x0000000080028e08        0x8 
+ .text          0x0000000080028e10       0x38 /usr/lib/n64/libultra_rom.a(vigetnextframebuf.o)
+                0x0000000080028e10                osViGetNextFramebuffer
+ *fill*         0x0000000080028e48        0x8 
+ .text          0x0000000080028e50      0x2a4 /usr/lib/n64/libultra_rom.a(vimgr.o)
+                0x0000000080028f70                osCreateViManager
+ *fill*         0x00000000800290f4        0xc 
+ .text          0x0000000080029100       0x54 /usr/lib/n64/libultra_rom.a(visetevent.o)
+                0x0000000080029100                osViSetEvent
+ *fill*         0x0000000080029154        0xc 
+ .text          0x0000000080029160       0x44 /usr/lib/n64/libultra_rom.a(visetmode.o)
+                0x0000000080029160                osViSetMode
+ *fill*         0x00000000800291a4        0xc 
+ .text          0x00000000800291b0      0x124 /usr/lib/n64/libultra_rom.a(visetspecial.o)
+                0x00000000800291b0                osViSetSpecialFeatures
+ *fill*         0x00000000800292d4        0xc 
+ .text          0x00000000800292e0       0x40 /usr/lib/n64/libultra_rom.a(visetyscale.o)
+                0x00000000800292e0                osViSetYScale
+ .text          0x0000000080029320       0x40 /usr/lib/n64/libultra_rom.a(viswapbuf.o)
+                0x0000000080029320                osViSwapBuffer
+ .text          0x0000000080029360      0x214 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
+                0x0000000080029360                __osViSwapContext
+ *fill*         0x0000000080029574        0xc 
+ .text          0x0000000080029580        0x0 /usr/lib/n64/libultra_rom.a(vitbl.o)
+ .text          0x0000000080029580      0x29c /usr/lib/n64/libultra_rom.a(timerintr.o)
+                0x0000000080029580                __osTimerServicesInit
+                0x00000000800295d0                __osSetTimerIntr
+                0x0000000080029638                __osInsertTimer
+                0x0000000080029714                __osTimerInterrupt
+ *fill*         0x000000008002981c        0x4 
+ .text          0x0000000080029820       0xec /usr/lib/n64/libultra_rom.a(crc.o)
+                0x0000000080029820                __osContAddressCrc
+                0x000000008002988c                __osContDataCrc
+ *fill*         0x000000008002990c        0x4 
+ .text          0x0000000080029910       0x9c /usr/lib/n64/libultra_rom.a(siacs.o)
+                0x0000000080029910                __osSiCreateAccessQueue
+                0x000000008002995c                __osSiGetAccess
+                0x0000000080029998                __osSiRelAccess
+ *fill*         0x00000000800299ac        0x4 
+ .text          0x00000000800299b0       0xac /usr/lib/n64/libultra_rom.a(sirawdma.o)
+                0x00000000800299b0                __osSiRawStartDma
+ *fill*         0x0000000080029a5c        0x4 
+ .text          0x0000000080029a60       0x4c /usr/lib/n64/libultra_rom.a(sirawread.o)
+                0x0000000080029a60                __osSiRawReadIo
+ *fill*         0x0000000080029aac        0x4 
+ .text          0x0000000080029ab0       0x48 /usr/lib/n64/libultra_rom.a(sirawwrite.o)
+                0x0000000080029ab0                __osSiRawWriteIo
+ *fill*         0x0000000080029af8        0x8 
+ .text          0x0000000080029b00      0x134 /usr/lib/n64/libultra_rom.a(cosf.o)
+                0x0000000080029b00                fcos
+                0x0000000080029b00                cosf
+                0x0000000080029b00                __cosf
+ *fill*         0x0000000080029c34        0xc 
+ .text          0x0000000080029c40      0x1c0 /usr/lib/n64/libultra_rom.a(mtxutil.o)
+                0x0000000080029c40                guMtxF2L
+                0x0000000080029ce4                guMtxL2F
+                0x0000000080029d88                guMtxIdentF
+                0x0000000080029dd8                guMtxIdent
+ .text          0x0000000080029e00      0x1bc /usr/lib/n64/libultra_rom.a(perspective.o)
+                0x0000000080029e00                guPerspectiveF
+                0x0000000080029f70                guPerspective
+ *fill*         0x0000000080029fbc        0x4 
+ .text          0x0000000080029fc0      0x178 /usr/lib/n64/libultra_rom.a(sinf.o)
+                0x0000000080029fc0                fsin
+                0x0000000080029fc0                __sinf
+                0x0000000080029fc0                sinf
+ *fill*         0x000000008002a138        0x8 
+ .text          0x000000008002a140        0x0 /usr/lib/n64/libultra_rom.a(vimodempallan1.o)
+ .text          0x000000008002a140        0x0 /usr/lib/n64/libultra_rom.a(vimodentsclan1.o)
+ .text          0x000000008002a140        0x0 /usr/lib/n64/libultra_rom.a(vimodepallan1.o)
+ .text          0x000000008002a140       0xa4 /usr/lib/n64/libultra_rom.a(contquery.o)
+                0x000000008002a140                osContStartQuery
+                0x000000008002a1c4                osContGetQuery
+ *fill*         0x000000008002a1e4        0xc 
+ .text          0x000000008002a1f0      0x164 /usr/lib/n64/libultra_rom.a(contreaddata.o)
+                0x000000008002a1f0                osContStartReadData
+                0x000000008002a2f4                osContGetReadData
+ *fill*         0x000000008002a354        0xc 
+ .text          0x000000008002a360      0x270 /usr/lib/n64/libultra_rom.a(controller.o)
+                0x000000008002a360                __osContGetInitData
+                0x000000008002a3d8                __osPackRequestData
+                0x000000008002a464                osContInit
+ .text          0x000000008002a5d0       0x60 /usr/lib/n64/libultra_rom.a(parameters.o)
+ .text          0x000000008002a630      0x964 /usr/lib/n64/libultra_rom.a(exceptasm.o)
+                0x000000008002a630                __osExceptionPreamble
+                0x000000008002a640                __osException
+                0x000000008002abbc                send_mesg
+                0x000000008002ac74                handle_CpU
+                0x000000008002aca8                __osEnqueueAndYield
+                0x000000008002adac                __osEnqueueThread
+                0x000000008002adf4                __osPopThread
+                0x000000008002ae04                __osNop
+                0x000000008002ae0c                __osDispatchThread
+                0x000000008002af88                __osCleanupThread
+ *fill*         0x000000008002af94        0xc 
+ .text          0x000000008002afa0       0x8c /usr/lib/n64/libultra_rom.a(interrupt.o)
+                0x000000008002afa0                __osDisableInt
+                0x000000008002b010                __osRestoreInt
+ *fill*         0x000000008002b02c        0x4 
+ .text          0x000000008002b030       0xa0 /usr/lib/n64/libultra_rom.a(setintmask.o)
+                0x000000008002b030                osSetIntMask
+ .text          0x000000008002b0d0       0x60 /usr/lib/n64/libultra_rom.a(normalize.o)
+                0x000000008002b0d0                guNormalize
+ .text          0x000000008002b130       0xe0 /usr/lib/n64/libultra_rom.a(translate.o)
+                0x000000008002b130                guTranslate
+ .text          0x000000008002b210       0x58 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
+                0x000000008002b210                osMapTLBRdb
+ *fill*         0x000000008002b268        0x8 
+ .text          0x000000008002b270       0xb8 /usr/lib/n64/libultra_rom.a(probetlb.o)
+                0x000000008002b270                __osProbeTLB
+ *fill*         0x000000008002b328        0x8 
+ .text          0x000000008002b330       0x44 /usr/lib/n64/libultra_rom.a(unmaptlball.o)
+                0x000000008002b330                osUnmapTLBAll
+ *fill*         0x000000008002b374        0xc 
+ .text          0x000000008002b380        0xc /usr/lib/n64/libultra_rom.a(getcause.o)
+                0x000000008002b380                __osGetCause
+ *fill*         0x000000008002b38c        0x4 
+ .text          0x000000008002b390        0xc /usr/lib/n64/libultra_rom.a(getcount.o)
+                0x000000008002b390                osGetCount
+ *fill*         0x000000008002b39c        0x4 
+ .text          0x000000008002b3a0        0xc /usr/lib/n64/libultra_rom.a(getsr.o)
+                0x000000008002b3a0                __osGetSR
+ *fill*         0x000000008002b3ac        0x4 
+ .text          0x000000008002b3b0        0xc /usr/lib/n64/libultra_rom.a(setcompare.o)
+                0x000000008002b3b0                __osSetCompare
+ *fill*         0x000000008002b3bc        0x4 
+ .text          0x000000008002b3c0       0x10 /usr/lib/n64/libultra_rom.a(setfpccsr.o)
+                0x000000008002b3c0                __osSetFpcCsr
+ .text          0x000000008002b3d0       0x10 /usr/lib/n64/libultra_rom.a(setsr.o)
+                0x000000008002b3d0                __osSetSR
+ .text          0x000000008002b3e0       0x10 /usr/lib/n64/libultra_rom.a(setwatchlo.o)
+                0x000000008002b3e0                __osSetWatchLo
+ .text          0x000000008002b3f0      0x110 /usr/lib/n64/libultra_rom.a(bcmp.o)
+                0x000000008002b3f0                bcmp
+ .text          0x000000008002b500      0x31c /usr/lib/n64/libultra_rom.a(bcopy.o)
+                0x000000008002b500                bcopy
+ *fill*         0x000000008002b81c        0x4 
+ .text          0x000000008002b820       0xa0 /usr/lib/n64/libultra_rom.a(bzero.o)
+                0x000000008002b820                bzero
+ .text          0x000000008002b8c0        0x0 /usr/lib/n64/libultra_rom.a(libm_vals.o)
+ .text          0x000000008002b8c0       0xb0 /usr/lib/n64/libultra_rom.a(invaldcache.o)
+                0x000000008002b8c0                osInvalDCache
+ .text          0x000000008002b970       0x74 /usr/lib/n64/libultra_rom.a(invalicache.o)
+                0x000000008002b970                osInvalICache
+ *fill*         0x000000008002b9e4        0xc 
+ .text          0x000000008002b9f0       0x28 /usr/lib/n64/libultra_rom.a(writebackdcacheall.o)
+                0x000000008002b9f0                osWritebackDCacheAll
+ *fill*         0x000000008002ba18        0x8 
+ .text          0x000000008002ba20       0x74 /usr/lib/n64/libultra_rom.a(writebackdcache.o)
+                0x000000008002ba20                osWritebackDCache
+ *fill*         0x000000008002ba94        0xc 
+ .text          0x000000008002baa0      0x914 /usr/lib/n64/libultra_rom.a(contpfs.o)
+                0x000000008002baa0                __osSumcalc
+                0x000000008002bacc                __osIdCheckSum
+                0x000000008002bb10                __osRepairPackId
+                0x000000008002bdac                __osCheckPackId
+                0x000000008002bef4                __osGetId
+                0x000000008002c06c                __osCheckId
+                0x000000008002c11c                __osPfsRWInode
+ *fill*         0x000000008002c3b4        0xc 
+ .text          0x000000008002c3c0      0x1f8 /usr/lib/n64/libultra_rom.a(contramwrite.o)
+                0x000000008002c3c0                __osContRamWrite
+ *fill*         0x000000008002c5b8        0x8 
+ .text          0x000000008002c5c0      0x630 /usr/lib/n64/libultra_rom.a(pfschecker.o)
+                0x000000008002c5c0                corrupted_init
+                0x000000008002c6ec                corrupted
+                0x000000008002c814                osPfsChecker
+ .text          0x000000008002cbf0      0x384 /usr/lib/n64/libultra_rom.a(devmgr.o)
+                0x000000008002cbf0                __osDevMgrMain
+ *fill*         0x000000008002cf74        0xc 
+ .text          0x000000008002cf80      0x1b0 /usr/lib/n64/libultra_rom.a(epirawdma.o)
+                0x000000008002cf80                __osEPiRawStartDma
+ .text          0x000000008002d130      0x130 /usr/lib/n64/libultra_rom.a(epirawread.o)
+                0x000000008002d130                __osEPiRawReadIo
+ .text          0x000000008002d260      0x12c /usr/lib/n64/libultra_rom.a(epirawwrite.o)
+                0x000000008002d260                __osEPiRawWriteIo
+ *fill*         0x000000008002d38c        0x4 
+ .text          0x000000008002d390       0x40 /usr/lib/n64/libultra_rom.a(resetglobalintmask.o)
+                0x000000008002d390                __osResetGlobalIntMask
+ .text          0x000000008002d3d0       0x38 /usr/lib/n64/libultra_rom.a(setglobalintmask.o)
+                0x000000008002d3d0                __osSetGlobalIntMask
+ *fill*         0x000000008002d408        0x8 
+ .text          0x000000008002d410        0x0 /usr/lib/n64/libultra_rom.a(kdebugserver.o)
+ .text          0x000000008002d410       0xb8 /usr/lib/n64/libultra_rom.a(destroythread.o)
+                0x000000008002d410                osDestroyThread
+ *fill*         0x000000008002d4c8        0x8 
+ .text          0x000000008002d4d0       0x44 /usr/lib/n64/libultra_rom.a(yieldthread.o)
+                0x000000008002d4d0                osYieldThread
+ *fill*         0x000000008002d514        0xc 
+ .text          0x000000008002d520       0x14 /usr/lib/n64/libultra_rom.a(sp.o)
+                0x000000008002d520                __osSpDeviceBusy
+ *fill*         0x000000008002d534        0xc 
+ .text          0x000000008002d540       0x10 /usr/lib/n64/libultra_rom.a(spgetstat.o)
+                0x000000008002d540                __osSpGetStatus
+ .text          0x000000008002d550       0x94 /usr/lib/n64/libultra_rom.a(sprawdma.o)
+                0x000000008002d550                __osSpRawStartDma
+ *fill*         0x000000008002d5e4        0xc 
+ .text          0x000000008002d5f0       0x10 /usr/lib/n64/libultra_rom.a(spsetstat.o)
+                0x000000008002d5f0                __osSpSetStatus
+ .text          0x000000008002d600        0xc /usr/lib/n64/libultra_rom.a(vigetcurrcontext.o)
+                0x000000008002d600                __osViGetCurrentContext
+ *fill*         0x000000008002d60c        0x4 
+ .text          0x000000008002d610       0x6c /usr/lib/n64/libultra_rom.a(gettime.o)
+                0x000000008002d610                osGetTime
+ *fill*         0x000000008002d67c        0x4 
+ .text          0x000000008002d680      0x110 /usr/lib/n64/libultra_rom.a(settimer.o)
+                0x000000008002d680                osSetTimer
+ .text          0x000000008002d790       0x14 /usr/lib/n64/libultra_rom.a(si.o)
+                0x000000008002d790                __osSiDeviceBusy
  */libnusys.a:*.o(.text)
- *fill*         0x000000008002d644        0xc 
- .text          0x000000008002d650       0x3c /usr/lib/n64/nusys/libnusys.a(nucontinit.o)
-                0x000000008002d650                nuContInit
- *fill*         0x000000008002d68c        0x4 
- .text          0x000000008002d690      0x2e0 /usr/lib/n64/nusys/libnusys.a(nucontmgr.o)
-                0x000000008002d6e8                nuContMgrInit
-                0x000000008002d7a4                nuContMgrRemove
-                0x000000008002d7b0                nuContDataClose
-                0x000000008002d7c4                nuContDataOpen
- .text          0x000000008002d970      0x1ec /usr/lib/n64/nusys/libnusys.a(nucontpakmgr.o)
-                0x000000008002db44                nuContPakMgrInit
-                0x000000008002db50                nuContPakMgrRemove
- *fill*         0x000000008002db5c        0x4 
- .text          0x000000008002db60        0xc /usr/lib/n64/nusys/libnusys.a(nucontqueryread.o)
-                0x000000008002db60                nuContQueryRead
- *fill*         0x000000008002db6c        0x4 
- .text          0x000000008002db70      0x414 /usr/lib/n64/nusys/libnusys.a(nucontrmbmgr.o)
-                0x000000008002df40                nuContRmbMgrInit
-                0x000000008002df78                nuContRmbMgrRemove
- *fill*         0x000000008002df84        0xc 
- .text          0x000000008002df90       0x10 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayon.o)
-                0x000000008002df90                nuGfxDisplayOn
- .text          0x000000008002dfa0       0x38 /usr/lib/n64/nusys/libnusys.a(nugfxfuncset.o)
-                0x000000008002dfa0                nuGfxFuncSet
- *fill*         0x000000008002dfd8        0x8 
- .text          0x000000008002dfe0       0xb4 /usr/lib/n64/nusys/libnusys.a(nugfxinit_ex2.o)
-                0x000000008002dfe0                nuGfxInitEX2
- *fill*         0x000000008002e094        0xc 
- .text          0x000000008002e0a0      0x104 /usr/lib/n64/nusys/libnusys.a(nugfxsetcfb.o)
-                0x000000008002e0a0                nuGfxSetCfb
- *fill*         0x000000008002e1a4        0xc 
- .text          0x000000008002e1b0       0x14 /usr/lib/n64/nusys/libnusys.a(nugfxsetucodefifo.o)
-                0x000000008002e1b0                nuGfxSetUcodeFifo
- *fill*         0x000000008002e1c4        0xc 
- .text          0x000000008002e1d0        0x8 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfb.o)
-                0x000000008002e1d0                nuGfxSwapCfb
- *fill*         0x000000008002e1d8        0x8 
- .text          0x000000008002e1e0       0x34 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfbfuncset.o)
-                0x000000008002e1e0                nuGfxSwapCfbFuncSet
- *fill*         0x000000008002e214        0xc 
- .text          0x000000008002e220       0x18 /usr/lib/n64/nusys/libnusys.a(nugfxtaskallendwait.o)
-                0x000000008002e220                nuGfxTaskAllEndWait
- *fill*         0x000000008002e238        0x8 
- .text          0x000000008002e240      0x360 /usr/lib/n64/nusys/libnusys.a(nugfxtaskmgr.o)
-                0x000000008002e240                nuGfxTaskMgr
-                0x000000008002e33c                nuGfxTaskMgrInit
-                0x000000008002e44c                nuGfxTaskStart
- .text          0x000000008002e5a0      0x108 /usr/lib/n64/nusys/libnusys.a(nugfxthread.o)
-                0x000000008002e658                nuGfxThreadStart
- *fill*         0x000000008002e6a8        0x8 
- .text          0x000000008002e6b0       0x40 /usr/lib/n64/nusys/libnusys.a(nupiinit.o)
-                0x000000008002e6b0                nuPiInit
- .text          0x000000008002e6f0        0x0 /usr/lib/n64/nusys/libnusys.a(nurdpoutput.o)
- .text          0x000000008002e6f0      0x808 /usr/lib/n64/nusys/libnusys.a(nusched.o)
-                0x000000008002e9a8                nuScCreateScheduler
-                0x000000008002ebe4                nuScGetAudioMQ
-                0x000000008002ebf0                nuScGetGfxMQ
-                0x000000008002ebfc                nuScAddClient
-                0x000000008002ec94                nuScResetClientMesgType
-                0x000000008002ecd0                nuScRemoveClient
-                0x000000008002eee0                nuScSetFrameBufferNum
-                0x000000008002eeec                nuScGetFrameRate
- *fill*         0x000000008002eef8        0x8 
- .text          0x000000008002ef00       0xa4 /usr/lib/n64/nusys/libnusys.a(nusicallbackadd.o)
-                0x000000008002ef00                nuSiCallBackAdd
- *fill*         0x000000008002efa4        0xc 
- .text          0x000000008002efb0       0x7c /usr/lib/n64/nusys/libnusys.a(nusicallbackremove.o)
-                0x000000008002efb0                nuSiCallBackRemove
- *fill*         0x000000008002f02c        0x4 
- .text          0x000000008002f030      0x268 /usr/lib/n64/nusys/libnusys.a(nusimgr.o)
-                0x000000008002f18c                nuSiMgrInit
-                0x000000008002f21c                nuSiSendMesg
-                0x000000008002f280                nuSiMgrStop
-                0x000000008002f28c                nuSiMgrRestart
- *fill*         0x000000008002f298        0x8 
- .text          0x000000008002f2a0        0x0 /usr/lib/n64/nusys/libnusys.a(nuyieldbuf.o)
- .text          0x000000008002f2a0       0x54 /usr/lib/n64/nusys/libnusys.a(nucontdatalock.o)
-                0x000000008002f2a0                nuContDataLock
-                0x000000008002f2cc                nuContDataUnLock
- *fill*         0x000000008002f2f4        0xc 
- .text          0x000000008002f300        0x0 /usr/lib/n64/nusys/libnusys.a(nudramstack.o)
- .text          0x000000008002f300       0x10 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayoff.o)
-                0x000000008002f300                nuGfxDisplayOff
- .text          0x000000008002f310       0x64 /usr/lib/n64/nusys/libnusys.a(nugfxretracewait.o)
-                0x000000008002f310                nuGfxRetraceWait
+ *fill*         0x000000008002d7a4        0xc 
+ .text          0x000000008002d7b0       0x3c /usr/lib/n64/nusys/libnusys.a(nucontinit.o)
+                0x000000008002d7b0                nuContInit
+ *fill*         0x000000008002d7ec        0x4 
+ .text          0x000000008002d7f0      0x2e0 /usr/lib/n64/nusys/libnusys.a(nucontmgr.o)
+                0x000000008002d848                nuContMgrInit
+                0x000000008002d904                nuContMgrRemove
+                0x000000008002d910                nuContDataClose
+                0x000000008002d924                nuContDataOpen
+ .text          0x000000008002dad0      0x1ec /usr/lib/n64/nusys/libnusys.a(nucontpakmgr.o)
+                0x000000008002dca4                nuContPakMgrInit
+                0x000000008002dcb0                nuContPakMgrRemove
+ *fill*         0x000000008002dcbc        0x4 
+ .text          0x000000008002dcc0        0xc /usr/lib/n64/nusys/libnusys.a(nucontqueryread.o)
+                0x000000008002dcc0                nuContQueryRead
+ *fill*         0x000000008002dccc        0x4 
+ .text          0x000000008002dcd0      0x414 /usr/lib/n64/nusys/libnusys.a(nucontrmbmgr.o)
+                0x000000008002e0a0                nuContRmbMgrInit
+                0x000000008002e0d8                nuContRmbMgrRemove
+ *fill*         0x000000008002e0e4        0xc 
+ .text          0x000000008002e0f0       0x10 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayon.o)
+                0x000000008002e0f0                nuGfxDisplayOn
+ .text          0x000000008002e100       0x38 /usr/lib/n64/nusys/libnusys.a(nugfxfuncset.o)
+                0x000000008002e100                nuGfxFuncSet
+ *fill*         0x000000008002e138        0x8 
+ .text          0x000000008002e140       0xb4 /usr/lib/n64/nusys/libnusys.a(nugfxinit_ex2.o)
+                0x000000008002e140                nuGfxInitEX2
+ *fill*         0x000000008002e1f4        0xc 
+ .text          0x000000008002e200      0x104 /usr/lib/n64/nusys/libnusys.a(nugfxsetcfb.o)
+                0x000000008002e200                nuGfxSetCfb
+ *fill*         0x000000008002e304        0xc 
+ .text          0x000000008002e310       0x14 /usr/lib/n64/nusys/libnusys.a(nugfxsetucodefifo.o)
+                0x000000008002e310                nuGfxSetUcodeFifo
+ *fill*         0x000000008002e324        0xc 
+ .text          0x000000008002e330        0x8 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfb.o)
+                0x000000008002e330                nuGfxSwapCfb
+ *fill*         0x000000008002e338        0x8 
+ .text          0x000000008002e340       0x34 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfbfuncset.o)
+                0x000000008002e340                nuGfxSwapCfbFuncSet
+ *fill*         0x000000008002e374        0xc 
+ .text          0x000000008002e380       0x18 /usr/lib/n64/nusys/libnusys.a(nugfxtaskallendwait.o)
+                0x000000008002e380                nuGfxTaskAllEndWait
+ *fill*         0x000000008002e398        0x8 
+ .text          0x000000008002e3a0      0x360 /usr/lib/n64/nusys/libnusys.a(nugfxtaskmgr.o)
+                0x000000008002e3a0                nuGfxTaskMgr
+                0x000000008002e49c                nuGfxTaskMgrInit
+                0x000000008002e5ac                nuGfxTaskStart
+ .text          0x000000008002e700      0x108 /usr/lib/n64/nusys/libnusys.a(nugfxthread.o)
+                0x000000008002e7b8                nuGfxThreadStart
+ *fill*         0x000000008002e808        0x8 
+ .text          0x000000008002e810       0x40 /usr/lib/n64/nusys/libnusys.a(nupiinit.o)
+                0x000000008002e810                nuPiInit
+ .text          0x000000008002e850        0x0 /usr/lib/n64/nusys/libnusys.a(nurdpoutput.o)
+ .text          0x000000008002e850      0x808 /usr/lib/n64/nusys/libnusys.a(nusched.o)
+                0x000000008002eb08                nuScCreateScheduler
+                0x000000008002ed44                nuScGetAudioMQ
+                0x000000008002ed50                nuScGetGfxMQ
+                0x000000008002ed5c                nuScAddClient
+                0x000000008002edf4                nuScResetClientMesgType
+                0x000000008002ee30                nuScRemoveClient
+                0x000000008002f040                nuScSetFrameBufferNum
+                0x000000008002f04c                nuScGetFrameRate
+ *fill*         0x000000008002f058        0x8 
+ .text          0x000000008002f060       0xa4 /usr/lib/n64/nusys/libnusys.a(nusicallbackadd.o)
+                0x000000008002f060                nuSiCallBackAdd
+ *fill*         0x000000008002f104        0xc 
+ .text          0x000000008002f110       0x7c /usr/lib/n64/nusys/libnusys.a(nusicallbackremove.o)
+                0x000000008002f110                nuSiCallBackRemove
+ *fill*         0x000000008002f18c        0x4 
+ .text          0x000000008002f190      0x268 /usr/lib/n64/nusys/libnusys.a(nusimgr.o)
+                0x000000008002f2ec                nuSiMgrInit
+                0x000000008002f37c                nuSiSendMesg
+                0x000000008002f3e0                nuSiMgrStop
+                0x000000008002f3ec                nuSiMgrRestart
+ *fill*         0x000000008002f3f8        0x8 
+ .text          0x000000008002f400        0x0 /usr/lib/n64/nusys/libnusys.a(nuyieldbuf.o)
+ .text          0x000000008002f400       0x54 /usr/lib/n64/nusys/libnusys.a(nucontdatalock.o)
+                0x000000008002f400                nuContDataLock
+                0x000000008002f42c                nuContDataUnLock
+ *fill*         0x000000008002f454        0xc 
+ .text          0x000000008002f460        0x0 /usr/lib/n64/nusys/libnusys.a(nudramstack.o)
+ .text          0x000000008002f460       0x10 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayoff.o)
+                0x000000008002f460                nuGfxDisplayOff
+ .text          0x000000008002f470       0x64 /usr/lib/n64/nusys/libnusys.a(nugfxretracewait.o)
+                0x000000008002f470                nuGfxRetraceWait
  */libgcc.a:*.o(.text)
  /usr/lib/n64/PR/rspboot.o(.text)
- *fill*         0x000000008002f374        0xc 
- .text          0x000000008002f380       0xd0 /usr/lib/n64/PR/rspboot.o
-                0x000000008002f380                rspbootTextStart
-                0x000000008002f450                rspbootTextEnd
+ *fill*         0x000000008002f4d4        0xc 
+ .text          0x000000008002f4e0       0xd0 /usr/lib/n64/PR/rspboot.o
+                0x000000008002f4e0                rspbootTextStart
+                0x000000008002f5b0                rspbootTextEnd
  /usr/lib/n64/PR/gspF3DEX2.fifo.o(.text)
- .text          0x000000008002f450     0x1390 /usr/lib/n64/PR/gspF3DEX2.fifo.o
-                0x000000008002f450                gspF3DEX2_fifoTextStart
-                0x00000000800307e0                gspF3DEX2_fifoTextEnd
+ .text          0x000000008002f5b0     0x1390 /usr/lib/n64/PR/gspF3DEX2.fifo.o
+                0x000000008002f5b0                gspF3DEX2_fifoTextStart
+                0x0000000080030940                gspF3DEX2_fifoTextEnd
  /usr/lib/n64/PR/gspL3DEX2.fifo.o(.text)
- .text          0x00000000800307e0     0x1190 /usr/lib/n64/PR/gspL3DEX2.fifo.o
-                0x00000000800307e0                gspL3DEX2_fifoTextStart
-                0x0000000080031970                gspL3DEX2_fifoTextEnd
+ .text          0x0000000080030940     0x1190 /usr/lib/n64/PR/gspL3DEX2.fifo.o
+                0x0000000080030940                gspL3DEX2_fifoTextStart
+                0x0000000080031ad0                gspL3DEX2_fifoTextEnd
  /usr/lib/n64/PR/gspF3DEX2.Rej.fifo.o(.text)
- .text          0x0000000080031970     0x1190 /usr/lib/n64/PR/gspF3DEX2.Rej.fifo.o
-                0x0000000080031970                gspF3DEX2_Rej_fifoTextStart
-                0x0000000080032b00                gspF3DEX2_Rej_fifoTextEnd
+ .text          0x0000000080031ad0     0x1190 /usr/lib/n64/PR/gspF3DEX2.Rej.fifo.o
+                0x0000000080031ad0                gspF3DEX2_Rej_fifoTextStart
+                0x0000000080032c60                gspF3DEX2_Rej_fifoTextEnd
  /usr/lib/n64/PR/gspF3DEX2.NoN.fifo.o(.text)
- .text          0x0000000080032b00     0x1390 /usr/lib/n64/PR/gspF3DEX2.NoN.fifo.o
-                0x0000000080032b00                gspF3DEX2_NoN_fifoTextStart
-                0x0000000080033e90                gspF3DEX2_NoN_fifoTextEnd
+ .text          0x0000000080032c60     0x1390 /usr/lib/n64/PR/gspF3DEX2.NoN.fifo.o
+                0x0000000080032c60                gspF3DEX2_NoN_fifoTextStart
+                0x0000000080033ff0                gspF3DEX2_NoN_fifoTextEnd
  /usr/lib/n64/PR/gspF3DLX2.Rej.fifo.o(.text)
- .text          0x0000000080033e90     0x1190 /usr/lib/n64/PR/gspF3DLX2.Rej.fifo.o
-                0x0000000080033e90                gspF3DLX2_Rej_fifoTextStart
-                0x0000000080035020                gspF3DLX2_Rej_fifoTextEnd
+ .text          0x0000000080033ff0     0x1190 /usr/lib/n64/PR/gspF3DLX2.Rej.fifo.o
+                0x0000000080033ff0                gspF3DLX2_Rej_fifoTextStart
+                0x0000000080035180                gspF3DLX2_Rej_fifoTextEnd
  /usr/lib/n64/PR/gspS2DEX2.fifo.o(.text)
- .text          0x0000000080035020     0x18c0 /usr/lib/n64/PR/gspS2DEX2.fifo.o
-                0x0000000080035020                gspS2DEX2_fifoTextStart
-                0x00000000800368e0                gspS2DEX2_fifoTextEnd
+ .text          0x0000000080035180     0x18c0 /usr/lib/n64/PR/gspS2DEX2.fifo.o
+                0x0000000080035180                gspS2DEX2_fifoTextStart
+                0x0000000080036a40                gspS2DEX2_fifoTextEnd
  /usr/lib/n64/nusys/nusys_rom.o(.data*)
- .data          0x00000000800368e0        0x0 /usr/lib/n64/nusys/nusys_rom.o
+ .data          0x0000000080036a40        0x0 /usr/lib/n64/nusys/nusys_rom.o
  build/src/main*.o(.data*)
- .data          0x00000000800368e0        0x0 build/src/main/graphic.o
- .data          0x00000000800368e0       0x80 build/src/main/stage00.o
- .data          0x0000000080036960        0x0 build/src/main/main.o
- .data          0x0000000080036960       0x60 build/src/main/gfxinit.o
-                0x0000000080036960                setup_rspstate
-                0x0000000080036988                setup_rdpstate
+ .data          0x0000000080036a40        0x0 build/src/main/graphic.o
+ .data          0x0000000080036a40       0x84 build/src/main/stage00.o
+                0x0000000080036ac0                cameraFov
+ *fill*         0x0000000080036ac4        0xc 
+ .data          0x0000000080036ad0        0x0 build/src/main/main.o
+ .data          0x0000000080036ad0       0x60 build/src/main/gfxinit.o
+                0x0000000080036ad0                setup_rspstate
+                0x0000000080036af8                setup_rdpstate
  */libultra_rom.a:*.o(.data*)
- .data          0x00000000800369c0        0x0 /usr/lib/n64/libultra_rom.a(motor.o)
- .data          0x00000000800369c0        0x0 /usr/lib/n64/libultra_rom.a(afterprenmi.o)
- .data          0x00000000800369c0       0x10 /usr/lib/n64/libultra_rom.a(initialize.o)
-                0x00000000800369c0                __OSGlobalIntMask
-                0x00000000800369c4                osViClock
-                0x00000000800369c8                osClockRate
- .data          0x00000000800369d0        0x4 /usr/lib/n64/libultra_rom.a(contramread.o)
-                0x00000000800369d0                __osPfsLastChannel
- *fill*         0x00000000800369d4        0xc 
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsallocatefile.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsdeletefile.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsfilestate.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsfreeblocks.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsgetstatus.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsinitpak.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsisplug.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsnumfiles.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsreadwritefile.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsrepairid.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfssearchfile.o)
- .data          0x00000000800369e0        0x0 /usr/lib/n64/libultra_rom.a(pfsselectbank.o)
- .data          0x00000000800369e0        0x4 /usr/lib/n64/libultra_rom.a(cartrominit.o)
- *fill*         0x00000000800369e4        0xc 
- .data          0x00000000800369f0        0x0 /usr/lib/n64/libultra_rom.a(piacs.o)
- .data          0x00000000800369f0        0x8 /usr/lib/n64/libultra_rom.a(pimgr.o)
-                0x00000000800369f0                __osCurrentHandle
- *fill*         0x00000000800369f8        0x8 
- .data          0x0000000080036a00        0x0 /usr/lib/n64/libultra_rom.a(pirawdma.o)
- .data          0x0000000080036a00        0x0 /usr/lib/n64/libultra_rom.a(rotate.o)
- .data          0x0000000080036a00        0x0 /usr/lib/n64/libultra_rom.a(createthread.o)
- .data          0x0000000080036a00        0x0 /usr/lib/n64/libultra_rom.a(getthreadpri.o)
- .data          0x0000000080036a00        0x0 /usr/lib/n64/libultra_rom.a(setthreadpri.o)
- .data          0x0000000080036a00        0x0 /usr/lib/n64/libultra_rom.a(startthread.o)
- .data          0x0000000080036a00        0x0 /usr/lib/n64/libultra_rom.a(stopthread.o)
- .data          0x0000000080036a00       0x10 /usr/lib/n64/libultra_rom.a(thread.o)
-                0x0000000080036a00                __osActiveQueue
-                0x0000000080036a04                __osRunQueue
-                0x0000000080036a08                __osThreadTail
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(spsetpc.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(sptask.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(sptaskyield.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(sptaskyielded.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(string.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(createmesgqueue.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(recvmesg.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(sendmesg.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(seteventmesg.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(virtualtophysical.o)
- .data          0x0000000080036a10        0x0 /usr/lib/n64/libultra_rom.a(viblack.o)
- .data          0x0000000080036a10        0x8 /usr/lib/n64/libultra_rom.a(vi.o)
-                0x0000000080036a10                __osViNext
-                0x0000000080036a14                __osViCurr
- *fill*         0x0000000080036a18        0x8 
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrframebuf.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(vigetnextframebuf.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(vimgr.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(visetevent.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(visetmode.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(visetspecial.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(visetyscale.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(viswapbuf.o)
- .data          0x0000000080036a20        0x0 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
- .data          0x0000000080036a20     0x1180 /usr/lib/n64/libultra_rom.a(vitbl.o)
-                0x0000000080036a20                osViModeTable
- .data          0x0000000080037ba0        0x4 /usr/lib/n64/libultra_rom.a(timerintr.o)
-                0x0000000080037ba0                __osTimerList
- *fill*         0x0000000080037ba4        0xc 
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(crc.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(siacs.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(sirawdma.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(sirawread.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(sirawwrite.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(cosf.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(frustum.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(mtxutil.o)
- .data          0x0000000080037bb0        0x0 /usr/lib/n64/libultra_rom.a(sinf.o)
- .data          0x0000000080037bb0       0x50 /usr/lib/n64/libultra_rom.a(vimodempallan1.o)
-                0x0000000080037bb0                osViModeMpalLan1
- .data          0x0000000080037c00       0x50 /usr/lib/n64/libultra_rom.a(vimodentsclan1.o)
-                0x0000000080037c00                osViModeNtscLan1
- .data          0x0000000080037c50       0x50 /usr/lib/n64/libultra_rom.a(vimodepallan1.o)
-                0x0000000080037c50                osViModePalLan1
- .data          0x0000000080037ca0        0x0 /usr/lib/n64/libultra_rom.a(contquery.o)
- .data          0x0000000080037ca0        0x0 /usr/lib/n64/libultra_rom.a(contreaddata.o)
- .data          0x0000000080037ca0        0x0 /usr/lib/n64/libultra_rom.a(controller.o)
- .data          0x0000000080037ca0        0x0 /usr/lib/n64/libultra_rom.a(parameters.o)
- .data          0x0000000080037ca0       0x30 /usr/lib/n64/libultra_rom.a(exceptasm.o)
-                0x0000000080037ca0                __osHwIntTable
-                0x0000000080037cc8                __osPiIntTable
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(interrupt.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(setintmask.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(normalize.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(probetlb.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(unmaptlball.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(getcause.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(getcount.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(getsr.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(setcompare.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(setfpccsr.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(setsr.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(setwatchlo.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(bcmp.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(bcopy.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(bzero.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(libm_vals.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(invaldcache.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(invalicache.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(writebackdcacheall.o)
- .data          0x0000000080037cd0        0x0 /usr/lib/n64/libultra_rom.a(writebackdcache.o)
- .data          0x0000000080037cd0        0x8 /usr/lib/n64/libultra_rom.a(contpfs.o)
-                0x0000000080037cd0                __osPfsInodeCacheBank
-                0x0000000080037cd4                __osPfsInodeCacheChannel
- *fill*         0x0000000080037cd8        0x8 
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(contramwrite.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(pfschecker.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(devmgr.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(epirawdma.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(epirawread.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(epirawwrite.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(resetglobalintmask.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(setglobalintmask.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(kdebugserver.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(destroythread.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(yieldthread.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(sp.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(spgetstat.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(sprawdma.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(spsetstat.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrcontext.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(gettime.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(settimer.o)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/libultra_rom.a(si.o)
+ .data          0x0000000080036b30        0x0 /usr/lib/n64/libultra_rom.a(motor.o)
+ .data          0x0000000080036b30        0x0 /usr/lib/n64/libultra_rom.a(afterprenmi.o)
+ .data          0x0000000080036b30       0x10 /usr/lib/n64/libultra_rom.a(initialize.o)
+                0x0000000080036b30                __OSGlobalIntMask
+                0x0000000080036b34                osViClock
+                0x0000000080036b38                osClockRate
+ .data          0x0000000080036b40        0x4 /usr/lib/n64/libultra_rom.a(contramread.o)
+                0x0000000080036b40                __osPfsLastChannel
+ *fill*         0x0000000080036b44        0xc 
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsallocatefile.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsdeletefile.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsfilestate.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsfreeblocks.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsgetstatus.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsinitpak.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsisplug.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsnumfiles.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsreadwritefile.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsrepairid.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfssearchfile.o)
+ .data          0x0000000080036b50        0x0 /usr/lib/n64/libultra_rom.a(pfsselectbank.o)
+ .data          0x0000000080036b50        0x4 /usr/lib/n64/libultra_rom.a(cartrominit.o)
+ *fill*         0x0000000080036b54        0xc 
+ .data          0x0000000080036b60        0x0 /usr/lib/n64/libultra_rom.a(piacs.o)
+ .data          0x0000000080036b60        0x8 /usr/lib/n64/libultra_rom.a(pimgr.o)
+                0x0000000080036b60                __osCurrentHandle
+ *fill*         0x0000000080036b68        0x8 
+ .data          0x0000000080036b70        0x0 /usr/lib/n64/libultra_rom.a(pirawdma.o)
+ .data          0x0000000080036b70        0x0 /usr/lib/n64/libultra_rom.a(rotate.o)
+ .data          0x0000000080036b70        0x0 /usr/lib/n64/libultra_rom.a(createthread.o)
+ .data          0x0000000080036b70        0x0 /usr/lib/n64/libultra_rom.a(getthreadpri.o)
+ .data          0x0000000080036b70        0x0 /usr/lib/n64/libultra_rom.a(setthreadpri.o)
+ .data          0x0000000080036b70        0x0 /usr/lib/n64/libultra_rom.a(startthread.o)
+ .data          0x0000000080036b70        0x0 /usr/lib/n64/libultra_rom.a(stopthread.o)
+ .data          0x0000000080036b70       0x10 /usr/lib/n64/libultra_rom.a(thread.o)
+                0x0000000080036b70                __osActiveQueue
+                0x0000000080036b74                __osRunQueue
+                0x0000000080036b78                __osThreadTail
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(spsetpc.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(sptask.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(sptaskyield.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(sptaskyielded.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(string.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(createmesgqueue.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(recvmesg.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(sendmesg.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(seteventmesg.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(virtualtophysical.o)
+ .data          0x0000000080036b80        0x0 /usr/lib/n64/libultra_rom.a(viblack.o)
+ .data          0x0000000080036b80        0x8 /usr/lib/n64/libultra_rom.a(vi.o)
+                0x0000000080036b80                __osViNext
+                0x0000000080036b84                __osViCurr
+ *fill*         0x0000000080036b88        0x8 
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrframebuf.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(vigetnextframebuf.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(vimgr.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(visetevent.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(visetmode.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(visetspecial.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(visetyscale.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(viswapbuf.o)
+ .data          0x0000000080036b90        0x0 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
+ .data          0x0000000080036b90     0x1180 /usr/lib/n64/libultra_rom.a(vitbl.o)
+                0x0000000080036b90                osViModeTable
+ .data          0x0000000080037d10        0x4 /usr/lib/n64/libultra_rom.a(timerintr.o)
+                0x0000000080037d10                __osTimerList
+ *fill*         0x0000000080037d14        0xc 
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(crc.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(siacs.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(sirawdma.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(sirawread.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(sirawwrite.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(cosf.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(mtxutil.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .data          0x0000000080037d20        0x0 /usr/lib/n64/libultra_rom.a(sinf.o)
+ .data          0x0000000080037d20       0x50 /usr/lib/n64/libultra_rom.a(vimodempallan1.o)
+                0x0000000080037d20                osViModeMpalLan1
+ .data          0x0000000080037d70       0x50 /usr/lib/n64/libultra_rom.a(vimodentsclan1.o)
+                0x0000000080037d70                osViModeNtscLan1
+ .data          0x0000000080037dc0       0x50 /usr/lib/n64/libultra_rom.a(vimodepallan1.o)
+                0x0000000080037dc0                osViModePalLan1
+ .data          0x0000000080037e10        0x0 /usr/lib/n64/libultra_rom.a(contquery.o)
+ .data          0x0000000080037e10        0x0 /usr/lib/n64/libultra_rom.a(contreaddata.o)
+ .data          0x0000000080037e10        0x0 /usr/lib/n64/libultra_rom.a(controller.o)
+ .data          0x0000000080037e10        0x0 /usr/lib/n64/libultra_rom.a(parameters.o)
+ .data          0x0000000080037e10       0x30 /usr/lib/n64/libultra_rom.a(exceptasm.o)
+                0x0000000080037e10                __osHwIntTable
+                0x0000000080037e38                __osPiIntTable
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(interrupt.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(setintmask.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(normalize.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(translate.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(probetlb.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(unmaptlball.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(getcause.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(getcount.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(getsr.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(setcompare.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(setfpccsr.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(setsr.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(setwatchlo.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(bcmp.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(bcopy.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(bzero.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(libm_vals.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(invaldcache.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(invalicache.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(writebackdcacheall.o)
+ .data          0x0000000080037e40        0x0 /usr/lib/n64/libultra_rom.a(writebackdcache.o)
+ .data          0x0000000080037e40        0x8 /usr/lib/n64/libultra_rom.a(contpfs.o)
+                0x0000000080037e40                __osPfsInodeCacheBank
+                0x0000000080037e44                __osPfsInodeCacheChannel
+ *fill*         0x0000000080037e48        0x8 
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(contramwrite.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(pfschecker.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(devmgr.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(epirawdma.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(epirawread.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(epirawwrite.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(resetglobalintmask.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(setglobalintmask.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(kdebugserver.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(destroythread.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(yieldthread.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(sp.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(spgetstat.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(sprawdma.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(spsetstat.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrcontext.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(gettime.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(settimer.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/libultra_rom.a(si.o)
  */libnusys.a:*.o(.data*)
- .data          0x0000000080037ce0        0x0 /usr/lib/n64/nusys/libnusys.a(nucontinit.o)
- .data          0x0000000080037ce0       0x20 /usr/lib/n64/nusys/libnusys.a(nucontmgr.o)
-                0x0000000080037ce0                nuContCallBack
- .data          0x0000000080037d00       0x34 /usr/lib/n64/nusys/libnusys.a(nucontpakmgr.o)
-                0x0000000080037d00                nuContPakCallBack
- *fill*         0x0000000080037d34        0xc 
- .data          0x0000000080037d40        0x0 /usr/lib/n64/nusys/libnusys.a(nucontqueryread.o)
- .data          0x0000000080037d40       0x2c /usr/lib/n64/nusys/libnusys.a(nucontrmbmgr.o)
-                0x0000000080037d40                nuContRmbCallBack
-                0x0000000080037d68                nuContRmbSearchTime
- *fill*         0x0000000080037d6c        0x4 
- .data          0x0000000080037d70        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayon.o)
- .data          0x0000000080037d70        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxfuncset.o)
- .data          0x0000000080037d70      0x124 /usr/lib/n64/nusys/libnusys.a(nugfxinit_ex2.o)
- *fill*         0x0000000080037e94        0xc 
- .data          0x0000000080037ea0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetcfb.o)
- .data          0x0000000080037ea0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetucodefifo.o)
- .data          0x0000000080037ea0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfb.o)
- .data          0x0000000080037ea0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfbfuncset.o)
- .data          0x0000000080037ea0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxtaskallendwait.o)
- .data          0x0000000080037ea0        0x8 /usr/lib/n64/nusys/libnusys.a(nugfxtaskmgr.o)
-                0x0000000080037ea0                nuGfxUcodeFifoSize
-                0x0000000080037ea4                nuGfxCfbNum
- *fill*         0x0000000080037ea8        0x8 
- .data          0x0000000080037eb0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxthread.o)
- .data          0x0000000080037eb0        0x0 /usr/lib/n64/nusys/libnusys.a(nupiinit.o)
- .data          0x0000000080037eb0        0x0 /usr/lib/n64/nusys/libnusys.a(nurdpoutput.o)
- .data          0x0000000080037eb0       0x11 /usr/lib/n64/nusys/libnusys.a(nusched.o)
-                0x0000000080037eb0                nuScRetraceCounter
-                0x0000000080037eb4                nuVersion
- *fill*         0x0000000080037ec1        0xf 
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackadd.o)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackremove.o)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nusimgr.o)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nuyieldbuf.o)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nucontdatalock.o)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nudramstack.o)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayoff.o)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxretracewait.o)
+ .data          0x0000000080037e50        0x0 /usr/lib/n64/nusys/libnusys.a(nucontinit.o)
+ .data          0x0000000080037e50       0x20 /usr/lib/n64/nusys/libnusys.a(nucontmgr.o)
+                0x0000000080037e50                nuContCallBack
+ .data          0x0000000080037e70       0x34 /usr/lib/n64/nusys/libnusys.a(nucontpakmgr.o)
+                0x0000000080037e70                nuContPakCallBack
+ *fill*         0x0000000080037ea4        0xc 
+ .data          0x0000000080037eb0        0x0 /usr/lib/n64/nusys/libnusys.a(nucontqueryread.o)
+ .data          0x0000000080037eb0       0x2c /usr/lib/n64/nusys/libnusys.a(nucontrmbmgr.o)
+                0x0000000080037eb0                nuContRmbCallBack
+                0x0000000080037ed8                nuContRmbSearchTime
+ *fill*         0x0000000080037edc        0x4 
+ .data          0x0000000080037ee0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayon.o)
+ .data          0x0000000080037ee0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxfuncset.o)
+ .data          0x0000000080037ee0      0x124 /usr/lib/n64/nusys/libnusys.a(nugfxinit_ex2.o)
+ *fill*         0x0000000080038004        0xc 
+ .data          0x0000000080038010        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetcfb.o)
+ .data          0x0000000080038010        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetucodefifo.o)
+ .data          0x0000000080038010        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfb.o)
+ .data          0x0000000080038010        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfbfuncset.o)
+ .data          0x0000000080038010        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxtaskallendwait.o)
+ .data          0x0000000080038010        0x8 /usr/lib/n64/nusys/libnusys.a(nugfxtaskmgr.o)
+                0x0000000080038010                nuGfxUcodeFifoSize
+                0x0000000080038014                nuGfxCfbNum
+ *fill*         0x0000000080038018        0x8 
+ .data          0x0000000080038020        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxthread.o)
+ .data          0x0000000080038020        0x0 /usr/lib/n64/nusys/libnusys.a(nupiinit.o)
+ .data          0x0000000080038020        0x0 /usr/lib/n64/nusys/libnusys.a(nurdpoutput.o)
+ .data          0x0000000080038020       0x11 /usr/lib/n64/nusys/libnusys.a(nusched.o)
+                0x0000000080038020                nuScRetraceCounter
+                0x0000000080038024                nuVersion
+ *fill*         0x0000000080038031        0xf 
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackadd.o)
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackremove.o)
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nusimgr.o)
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nuyieldbuf.o)
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nucontdatalock.o)
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nudramstack.o)
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayoff.o)
+ .data          0x0000000080038040        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxretracewait.o)
  /usr/lib/n64/PR/rspboot.o(.data*)
- .data          0x0000000080037ed0        0x0 /usr/lib/n64/PR/rspboot.o
-                0x0000000080037ed0                rspbootDataEnd
-                0x0000000080037ed0                rspbootDataStart
+ .data          0x0000000080038040        0x0 /usr/lib/n64/PR/rspboot.o
+                0x0000000080038040                rspbootDataEnd
+                0x0000000080038040                rspbootDataStart
  /usr/lib/n64/PR/gspF3DEX2.fifo.o(.data*)
- .data          0x0000000080037ed0      0x420 /usr/lib/n64/PR/gspF3DEX2.fifo.o
-                0x0000000080037ed0                gspF3DEX2_fifoDataStart
-                0x00000000800382f0                gspF3DEX2_fifoDataEnd
+ .data          0x0000000080038040      0x420 /usr/lib/n64/PR/gspF3DEX2.fifo.o
+                0x0000000080038040                gspF3DEX2_fifoDataStart
+                0x0000000080038460                gspF3DEX2_fifoDataEnd
  /usr/lib/n64/PR/gspL3DEX2.fifo.o(.data*)
- .data          0x00000000800382f0      0x3f0 /usr/lib/n64/PR/gspL3DEX2.fifo.o
-                0x00000000800382f0                gspL3DEX2_fifoDataStart
-                0x00000000800386e0                gspL3DEX2_fifoDataEnd
+ .data          0x0000000080038460      0x3f0 /usr/lib/n64/PR/gspL3DEX2.fifo.o
+                0x0000000080038460                gspL3DEX2_fifoDataStart
+                0x0000000080038850                gspL3DEX2_fifoDataEnd
  /usr/lib/n64/PR/gspF3DEX2.Rej.fifo.o(.data*)
- .data          0x00000000800386e0      0x410 /usr/lib/n64/PR/gspF3DEX2.Rej.fifo.o
-                0x00000000800386e0                gspF3DEX2_Rej_fifoDataStart
-                0x0000000080038af0                gspF3DEX2_Rej_fifoDataEnd
+ .data          0x0000000080038850      0x410 /usr/lib/n64/PR/gspF3DEX2.Rej.fifo.o
+                0x0000000080038850                gspF3DEX2_Rej_fifoDataStart
+                0x0000000080038c60                gspF3DEX2_Rej_fifoDataEnd
  /usr/lib/n64/PR/gspF3DEX2.NoN.fifo.o(.data*)
- .data          0x0000000080038af0      0x420 /usr/lib/n64/PR/gspF3DEX2.NoN.fifo.o
-                0x0000000080038af0                gspF3DEX2_NoN_fifoDataStart
-                0x0000000080038f10                gspF3DEX2_NoN_fifoDataEnd
+ .data          0x0000000080038c60      0x420 /usr/lib/n64/PR/gspF3DEX2.NoN.fifo.o
+                0x0000000080038c60                gspF3DEX2_NoN_fifoDataStart
+                0x0000000080039080                gspF3DEX2_NoN_fifoDataEnd
  /usr/lib/n64/PR/gspF3DLX2.Rej.fifo.o(.data*)
- .data          0x0000000080038f10      0x410 /usr/lib/n64/PR/gspF3DLX2.Rej.fifo.o
-                0x0000000080038f10                gspF3DLX2_Rej_fifoDataStart
-                0x0000000080039320                gspF3DLX2_Rej_fifoDataEnd
+ .data          0x0000000080039080      0x410 /usr/lib/n64/PR/gspF3DLX2.Rej.fifo.o
+                0x0000000080039080                gspF3DLX2_Rej_fifoDataStart
+                0x0000000080039490                gspF3DLX2_Rej_fifoDataEnd
  /usr/lib/n64/PR/gspS2DEX2.fifo.o(.data*)
- .data          0x0000000080039320      0x390 /usr/lib/n64/PR/gspS2DEX2.fifo.o
-                0x0000000080039320                gspS2DEX2_fifoDataStart
-                0x00000000800396b0                gspS2DEX2_fifoDataEnd
+ .data          0x0000000080039490      0x390 /usr/lib/n64/PR/gspS2DEX2.fifo.o
+                0x0000000080039490                gspS2DEX2_fifoDataStart
+                0x0000000080039820                gspS2DEX2_fifoDataEnd
  /usr/lib/n64/nusys/nusys_rom.o(.*rodata*)
  build/src/main*.o(.*rodata*)
- .rodata.cst4   0x00000000800396b0       0x18 build/src/main/stage00.o
+ .rodata.cst4   0x0000000080039820       0x14 build/src/main/stage00.o
  */libultra_rom.a:*.o(.*rodata*)
- *fill*         0x00000000800396c8        0x8 
- .rodata.cst4   0x00000000800396d0        0x4 /usr/lib/n64/libultra_rom.a(rotate.o)
+ *fill*         0x0000000080039834        0xc 
+ .rodata.cst4   0x0000000080039840        0x4 /usr/lib/n64/libultra_rom.a(rotate.o)
                                           0x8 (size before relaxing)
- *fill*         0x00000000800396d4        0xc 
- .rodata.cst4   0x00000000800396e0        0x4 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
- *fill*         0x00000000800396e4        0xc 
- .rodata.cst8   0x00000000800396f0       0x40 /usr/lib/n64/libultra_rom.a(cosf.o)
- .rodata.cst4   0x0000000080039730        0x8 /usr/lib/n64/libultra_rom.a(frustum.o)
- *fill*         0x0000000080039738        0x8 
- .rodata.cst4   0x0000000080039740        0x8 /usr/lib/n64/libultra_rom.a(mtxutil.o)
+ *fill*         0x0000000080039844        0xc 
+ .rodata.cst4   0x0000000080039850        0x4 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
+ *fill*         0x0000000080039854        0xc 
+ .rodata.cst8   0x0000000080039860       0x40 /usr/lib/n64/libultra_rom.a(cosf.o)
+ .rodata.cst4   0x00000000800398a0        0x8 /usr/lib/n64/libultra_rom.a(mtxutil.o)
                                           0xc (size before relaxing)
- .rodata.cst8   0x0000000080039748       0x40 /usr/lib/n64/libultra_rom.a(sinf.o)
- *fill*         0x0000000080039748        0x8 
- .rodata        0x0000000080039750       0x44 /usr/lib/n64/libultra_rom.a(exceptasm.o)
- *fill*         0x0000000080039794        0xc 
- .rodata        0x00000000800397a0       0x80 /usr/lib/n64/libultra_rom.a(setintmask.o)
-                0x00000000800397a0                __osRcpImTable
- .rodata        0x0000000080039820        0x4 /usr/lib/n64/libultra_rom.a(libm_vals.o)
-                0x0000000080039820                __libm_qnan_f
- *fill*         0x0000000080039824        0xc 
- .rodata        0x0000000080039830       0x1c /usr/lib/n64/libultra_rom.a(devmgr.o)
+ *fill*         0x00000000800398a8        0x8 
+ .rodata.cst8   0x00000000800398b0       0x18 /usr/lib/n64/libultra_rom.a(perspective.o)
+ *fill*         0x00000000800398c8        0x8 
+ .rodata.cst4   0x00000000800398d0        0xc /usr/lib/n64/libultra_rom.a(perspective.o)
+ .rodata.cst8   0x00000000800398dc       0x40 /usr/lib/n64/libultra_rom.a(sinf.o)
+ *fill*         0x00000000800398dc        0x4 
+ .rodata        0x00000000800398e0       0x44 /usr/lib/n64/libultra_rom.a(exceptasm.o)
+ *fill*         0x0000000080039924        0xc 
+ .rodata        0x0000000080039930       0x80 /usr/lib/n64/libultra_rom.a(setintmask.o)
+                0x0000000080039930                __osRcpImTable
+ .rodata        0x00000000800399b0        0x4 /usr/lib/n64/libultra_rom.a(libm_vals.o)
+                0x00000000800399b0                __libm_qnan_f
+ *fill*         0x00000000800399b4        0xc 
+ .rodata        0x00000000800399c0       0x1c /usr/lib/n64/libultra_rom.a(devmgr.o)
  */libnusys.a:*.o(.*rodata*)
- .rodata.cst4   0x000000008003984c        0x4 /usr/lib/n64/nusys/libnusys.a(nusched.o)
+ .rodata.cst4   0x00000000800399dc        0x4 /usr/lib/n64/nusys/libnusys.a(nusched.o)
  */libgcc.a:*.o(.*rodata*)
-                0x0000000080039850                _codeSegmentEnd = ALIGN ((ADDR (.code) + SIZEOF (.code)), 0x10)
-                0x0000000000014c50                _codeSegmentRomEnd = ((_codeSegmentEnd - _codeSegmentStart) + _codeSegmentRomStart)
-                0x0000000000014c50                __romPos = _codeSegmentRomEnd
-                0x0000000080039850                . = _codeSegmentEnd
-                0x0000000080039850                _codeSegmentBssStart = ADDR (.code.noload)
+                0x00000000800399e0                _codeSegmentEnd = ALIGN ((ADDR (.code) + SIZEOF (.code)), 0x10)
+                0x0000000000014de0                _codeSegmentRomEnd = ((_codeSegmentEnd - _codeSegmentStart) + _codeSegmentRomStart)
+                0x0000000000014de0                __romPos = _codeSegmentRomEnd
+                0x00000000800399e0                . = _codeSegmentEnd
+                0x00000000800399e0                _codeSegmentBssStart = ADDR (.code.noload)
 
-.code.noload    0x0000000080039850    0x39370 load address 0x0000000000014c50
+.code.noload    0x00000000800399e0    0x393b0 load address 0x0000000000014de0
  /usr/lib/n64/nusys/nusys_rom.o(COMMON)
  /usr/lib/n64/nusys/nusys_rom.o(.scommon)
  /usr/lib/n64/nusys/nusys_rom.o(.*bss*)
- .bss           0x0000000080039850     0x4370 /usr/lib/n64/nusys/nusys_rom.o
-                0x0000000080039850                nuIdleFunc
-                0x0000000080039860                nuMainStack
+ .bss           0x00000000800399e0     0x4370 /usr/lib/n64/nusys/nusys_rom.o
+                0x00000000800399e0                nuIdleFunc
+                0x00000000800399f0                nuMainStack
  build/src/main*.o(.*bss*)
- .bss           0x000000008003dbc0     0x4088 build/src/main/graphic.o
-                0x000000008003dbc0                glistp
-                0x000000008003dbc8                gfx_dynamic
-                0x000000008003dc48                gfx_glist
- .bss           0x0000000080041c48        0x4 build/src/main/stage00.o
- .bss           0x0000000080041c4c        0xd build/src/main/main.o
-                0x0000000080041c4c                contPattern
-                0x0000000080041c50                contdata
-                0x0000000080041c58                testy
- .bss           0x0000000080041c59        0x0 build/src/main/gfxinit.o
+ .bss           0x000000008003dd50     0x40c8 build/src/main/graphic.o
+                0x000000008003dd50                glistp
+                0x000000008003dd58                gfx_dynamic
+                0x000000008003de18                gfx_glist
+ .bss           0x0000000080041e18        0x8 build/src/main/stage00.o
+ .bss           0x0000000080041e20        0xd build/src/main/main.o
+                0x0000000080041e20                contPattern
+                0x0000000080041e24                contdata
+                0x0000000080041e2c                testy
+ .bss           0x0000000080041e2d        0x0 build/src/main/gfxinit.o
  */libultra_rom.a:*.o(COMMON)
  */libultra_rom.a:*.o(.scommon)
  */libultra_rom.a:*.o(.*bss*)
- *fill*         0x0000000080041c59        0x7 
- .bss           0x0000000080041c60      0x100 /usr/lib/n64/libultra_rom.a(motor.o)
- .bss           0x0000000080041d60        0x0 /usr/lib/n64/libultra_rom.a(afterprenmi.o)
- .bss           0x0000000080041d60        0x8 /usr/lib/n64/libultra_rom.a(initialize.o)
-                0x0000000080041d60                __osFinalrom
-                0x0000000080041d64                __osShutdown
- .bss           0x0000000080041d68        0x0 /usr/lib/n64/libultra_rom.a(contramread.o)
- .bss           0x0000000080041d68        0x0 /usr/lib/n64/libultra_rom.a(pfsallocatefile.o)
- .bss           0x0000000080041d68        0x0 /usr/lib/n64/libultra_rom.a(pfsdeletefile.o)
- .bss           0x0000000080041d68        0x0 /usr/lib/n64/libultra_rom.a(pfsfilestate.o)
- .bss           0x0000000080041d68        0x0 /usr/lib/n64/libultra_rom.a(pfsfreeblocks.o)
- .bss           0x0000000080041d68        0x0 /usr/lib/n64/libultra_rom.a(pfsgetstatus.o)
- .bss           0x0000000080041d68        0x0 /usr/lib/n64/libultra_rom.a(pfsinitpak.o)
- *fill*         0x0000000080041d68        0x8 
- .bss           0x0000000080041d70       0x40 /usr/lib/n64/libultra_rom.a(pfsisplug.o)
-                0x0000000080041d70                __osPfsPifRam
- .bss           0x0000000080041db0        0x0 /usr/lib/n64/libultra_rom.a(pfsnumfiles.o)
- .bss           0x0000000080041db0        0x0 /usr/lib/n64/libultra_rom.a(pfsreadwritefile.o)
- .bss           0x0000000080041db0        0x0 /usr/lib/n64/libultra_rom.a(pfsrepairid.o)
- .bss           0x0000000080041db0        0x0 /usr/lib/n64/libultra_rom.a(pfssearchfile.o)
- .bss           0x0000000080041db0        0x0 /usr/lib/n64/libultra_rom.a(pfsselectbank.o)
- .bss           0x0000000080041db0       0x74 /usr/lib/n64/libultra_rom.a(cartrominit.o)
-                0x0000000080041db0                __CartRomHandle
- *fill*         0x0000000080041e24        0x4 
- .bss           0x0000000080041e28       0x20 /usr/lib/n64/libultra_rom.a(piacs.o)
-                0x0000000080041e28                __osPiAccessQueue
-                0x0000000080041e40                __osPiAccessQueueEnabled
- *fill*         0x0000000080041e48        0x8 
- .bss           0x0000000080041e50     0x12e0 /usr/lib/n64/libultra_rom.a(pimgr.o)
-                0x0000000080041e50                __Dom2SpeedParam
-                0x0000000080041ec8                __Dom1SpeedParam
-                0x0000000080041f3c                __osPiTable
-                0x0000000080041f40                __osPiDevMgr
- .bss           0x0000000080043130        0x0 /usr/lib/n64/libultra_rom.a(pirawdma.o)
- .bss           0x0000000080043130        0x0 /usr/lib/n64/libultra_rom.a(rotate.o)
- .bss           0x0000000080043130        0x0 /usr/lib/n64/libultra_rom.a(createthread.o)
- .bss           0x0000000080043130        0x0 /usr/lib/n64/libultra_rom.a(getthreadpri.o)
- .bss           0x0000000080043130        0x0 /usr/lib/n64/libultra_rom.a(setthreadpri.o)
- .bss           0x0000000080043130        0x0 /usr/lib/n64/libultra_rom.a(startthread.o)
- .bss           0x0000000080043130        0x0 /usr/lib/n64/libultra_rom.a(stopthread.o)
- .bss           0x0000000080043130        0x8 /usr/lib/n64/libultra_rom.a(thread.o)
-                0x0000000080043130                __osFaultedThread
-                0x0000000080043134                __osRunningThread
- .bss           0x0000000080043138        0x0 /usr/lib/n64/libultra_rom.a(spsetpc.o)
- .bss           0x0000000080043138       0x40 /usr/lib/n64/libultra_rom.a(sptask.o)
- .bss           0x0000000080043178        0x0 /usr/lib/n64/libultra_rom.a(sptaskyield.o)
- .bss           0x0000000080043178        0x0 /usr/lib/n64/libultra_rom.a(sptaskyielded.o)
- .bss           0x0000000080043178        0x0 /usr/lib/n64/libultra_rom.a(string.o)
- .bss           0x0000000080043178        0x0 /usr/lib/n64/libultra_rom.a(createmesgqueue.o)
- .bss           0x0000000080043178        0x0 /usr/lib/n64/libultra_rom.a(recvmesg.o)
- .bss           0x0000000080043178        0x0 /usr/lib/n64/libultra_rom.a(sendmesg.o)
- .bss           0x0000000080043178       0x80 /usr/lib/n64/libultra_rom.a(seteventmesg.o)
-                0x0000000080043178                __osPreNMI
-                0x0000000080043180                __osEventStateTab
- .bss           0x00000000800431f8        0x0 /usr/lib/n64/libultra_rom.a(virtualtophysical.o)
- .bss           0x00000000800431f8        0x0 /usr/lib/n64/libultra_rom.a(viblack.o)
- .bss           0x00000000800431f8       0x60 /usr/lib/n64/libultra_rom.a(vi.o)
- .bss           0x0000000080043258        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrframebuf.o)
- .bss           0x0000000080043258        0x0 /usr/lib/n64/libultra_rom.a(vigetnextframebuf.o)
- *fill*         0x0000000080043258        0x8 
- .bss           0x0000000080043260     0x1240 /usr/lib/n64/libultra_rom.a(vimgr.o)
-                0x0000000080043260                __additional_scanline
-                0x0000000080043264                __osViDevMgr
- .bss           0x00000000800444a0        0x0 /usr/lib/n64/libultra_rom.a(visetevent.o)
- .bss           0x00000000800444a0        0x0 /usr/lib/n64/libultra_rom.a(visetmode.o)
- .bss           0x00000000800444a0        0x0 /usr/lib/n64/libultra_rom.a(visetspecial.o)
- .bss           0x00000000800444a0        0x0 /usr/lib/n64/libultra_rom.a(visetyscale.o)
- .bss           0x00000000800444a0        0x0 /usr/lib/n64/libultra_rom.a(viswapbuf.o)
- .bss           0x00000000800444a0        0x0 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
- .bss           0x00000000800444a0        0x0 /usr/lib/n64/libultra_rom.a(vitbl.o)
- .bss           0x00000000800444a0       0x38 /usr/lib/n64/libultra_rom.a(timerintr.o)
-                0x00000000800444a0                __osBaseTimer
-                0x00000000800444c0                __osTimerCounter
-                0x00000000800444c4                __osViIntrCount
-                0x00000000800444c8                __osBaseCounter
-                0x00000000800444d0                __osCurrentTime
- .bss           0x00000000800444d8        0x0 /usr/lib/n64/libultra_rom.a(crc.o)
- .bss           0x00000000800444d8       0x24 /usr/lib/n64/libultra_rom.a(siacs.o)
-                0x00000000800444d8                __osSiAccessQueueEnabled
-                0x00000000800444e0                __osSiAccessQueue
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(sirawdma.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(sirawread.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(sirawwrite.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(cosf.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(frustum.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(mtxutil.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(sinf.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(vimodempallan1.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(vimodentsclan1.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(vimodepallan1.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(contquery.o)
- .bss           0x00000000800444fc        0x0 /usr/lib/n64/libultra_rom.a(contreaddata.o)
- *fill*         0x00000000800444fc        0x4 
- .bss           0x0000000080044500       0x94 /usr/lib/n64/libultra_rom.a(controller.o)
-                0x0000000080044500                __osEepromTimerMsg
-                0x0000000080044508                __osEepromTimerQ
-                0x0000000080044520                __osEepromTimer
-                0x0000000080044540                __osMaxControllers
-                0x0000000080044541                __osContLastCmd
-                0x0000000080044550                __osContPifRam
-                0x0000000080044590                __osContinitialized
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(parameters.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(exceptasm.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(interrupt.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(setintmask.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(normalize.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(probetlb.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(unmaptlball.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(getcause.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(getcount.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(getsr.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(setcompare.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(setfpccsr.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(setsr.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(setwatchlo.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(bcmp.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(bcopy.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(bzero.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(libm_vals.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(invaldcache.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(invalicache.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(writebackdcacheall.o)
- .bss           0x0000000080044594        0x0 /usr/lib/n64/libultra_rom.a(writebackdcache.o)
- *fill*         0x0000000080044594        0x4 
- .bss           0x0000000080044598      0x100 /usr/lib/n64/libultra_rom.a(contpfs.o)
-                0x0000000080044598                __osPfsInodeCache
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(contramwrite.o)
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(pfschecker.o)
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(devmgr.o)
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(epirawdma.o)
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(epirawread.o)
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(epirawwrite.o)
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(resetglobalintmask.o)
- .bss           0x0000000080044698        0x0 /usr/lib/n64/libultra_rom.a(setglobalintmask.o)
- .bss           0x0000000080044698      0x1b0 /usr/lib/n64/libultra_rom.a(kdebugserver.o)
-                0x0000000080044698                __osThreadSave
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(destroythread.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(yieldthread.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(sp.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(spgetstat.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(sprawdma.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(spsetstat.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrcontext.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(gettime.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(settimer.o)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/libultra_rom.a(si.o)
+ *fill*         0x0000000080041e2d        0x3 
+ .bss           0x0000000080041e30      0x100 /usr/lib/n64/libultra_rom.a(motor.o)
+ .bss           0x0000000080041f30        0x0 /usr/lib/n64/libultra_rom.a(afterprenmi.o)
+ .bss           0x0000000080041f30        0x8 /usr/lib/n64/libultra_rom.a(initialize.o)
+                0x0000000080041f30                __osFinalrom
+                0x0000000080041f34                __osShutdown
+ .bss           0x0000000080041f38        0x0 /usr/lib/n64/libultra_rom.a(contramread.o)
+ .bss           0x0000000080041f38        0x0 /usr/lib/n64/libultra_rom.a(pfsallocatefile.o)
+ .bss           0x0000000080041f38        0x0 /usr/lib/n64/libultra_rom.a(pfsdeletefile.o)
+ .bss           0x0000000080041f38        0x0 /usr/lib/n64/libultra_rom.a(pfsfilestate.o)
+ .bss           0x0000000080041f38        0x0 /usr/lib/n64/libultra_rom.a(pfsfreeblocks.o)
+ .bss           0x0000000080041f38        0x0 /usr/lib/n64/libultra_rom.a(pfsgetstatus.o)
+ .bss           0x0000000080041f38        0x0 /usr/lib/n64/libultra_rom.a(pfsinitpak.o)
+ *fill*         0x0000000080041f38        0x8 
+ .bss           0x0000000080041f40       0x40 /usr/lib/n64/libultra_rom.a(pfsisplug.o)
+                0x0000000080041f40                __osPfsPifRam
+ .bss           0x0000000080041f80        0x0 /usr/lib/n64/libultra_rom.a(pfsnumfiles.o)
+ .bss           0x0000000080041f80        0x0 /usr/lib/n64/libultra_rom.a(pfsreadwritefile.o)
+ .bss           0x0000000080041f80        0x0 /usr/lib/n64/libultra_rom.a(pfsrepairid.o)
+ .bss           0x0000000080041f80        0x0 /usr/lib/n64/libultra_rom.a(pfssearchfile.o)
+ .bss           0x0000000080041f80        0x0 /usr/lib/n64/libultra_rom.a(pfsselectbank.o)
+ .bss           0x0000000080041f80       0x74 /usr/lib/n64/libultra_rom.a(cartrominit.o)
+                0x0000000080041f80                __CartRomHandle
+ *fill*         0x0000000080041ff4        0x4 
+ .bss           0x0000000080041ff8       0x20 /usr/lib/n64/libultra_rom.a(piacs.o)
+                0x0000000080041ff8                __osPiAccessQueue
+                0x0000000080042010                __osPiAccessQueueEnabled
+ *fill*         0x0000000080042018        0x8 
+ .bss           0x0000000080042020     0x12e0 /usr/lib/n64/libultra_rom.a(pimgr.o)
+                0x0000000080042020                __Dom2SpeedParam
+                0x0000000080042098                __Dom1SpeedParam
+                0x000000008004210c                __osPiTable
+                0x0000000080042110                __osPiDevMgr
+ .bss           0x0000000080043300        0x0 /usr/lib/n64/libultra_rom.a(pirawdma.o)
+ .bss           0x0000000080043300        0x0 /usr/lib/n64/libultra_rom.a(rotate.o)
+ .bss           0x0000000080043300        0x0 /usr/lib/n64/libultra_rom.a(createthread.o)
+ .bss           0x0000000080043300        0x0 /usr/lib/n64/libultra_rom.a(getthreadpri.o)
+ .bss           0x0000000080043300        0x0 /usr/lib/n64/libultra_rom.a(setthreadpri.o)
+ .bss           0x0000000080043300        0x0 /usr/lib/n64/libultra_rom.a(startthread.o)
+ .bss           0x0000000080043300        0x0 /usr/lib/n64/libultra_rom.a(stopthread.o)
+ .bss           0x0000000080043300        0x8 /usr/lib/n64/libultra_rom.a(thread.o)
+                0x0000000080043300                __osFaultedThread
+                0x0000000080043304                __osRunningThread
+ .bss           0x0000000080043308        0x0 /usr/lib/n64/libultra_rom.a(spsetpc.o)
+ .bss           0x0000000080043308       0x40 /usr/lib/n64/libultra_rom.a(sptask.o)
+ .bss           0x0000000080043348        0x0 /usr/lib/n64/libultra_rom.a(sptaskyield.o)
+ .bss           0x0000000080043348        0x0 /usr/lib/n64/libultra_rom.a(sptaskyielded.o)
+ .bss           0x0000000080043348        0x0 /usr/lib/n64/libultra_rom.a(string.o)
+ .bss           0x0000000080043348        0x0 /usr/lib/n64/libultra_rom.a(createmesgqueue.o)
+ .bss           0x0000000080043348        0x0 /usr/lib/n64/libultra_rom.a(recvmesg.o)
+ .bss           0x0000000080043348        0x0 /usr/lib/n64/libultra_rom.a(sendmesg.o)
+ .bss           0x0000000080043348       0x80 /usr/lib/n64/libultra_rom.a(seteventmesg.o)
+                0x0000000080043348                __osPreNMI
+                0x0000000080043350                __osEventStateTab
+ .bss           0x00000000800433c8        0x0 /usr/lib/n64/libultra_rom.a(virtualtophysical.o)
+ .bss           0x00000000800433c8        0x0 /usr/lib/n64/libultra_rom.a(viblack.o)
+ .bss           0x00000000800433c8       0x60 /usr/lib/n64/libultra_rom.a(vi.o)
+ .bss           0x0000000080043428        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrframebuf.o)
+ .bss           0x0000000080043428        0x0 /usr/lib/n64/libultra_rom.a(vigetnextframebuf.o)
+ *fill*         0x0000000080043428        0x8 
+ .bss           0x0000000080043430     0x1240 /usr/lib/n64/libultra_rom.a(vimgr.o)
+                0x0000000080043430                __additional_scanline
+                0x0000000080043434                __osViDevMgr
+ .bss           0x0000000080044670        0x0 /usr/lib/n64/libultra_rom.a(visetevent.o)
+ .bss           0x0000000080044670        0x0 /usr/lib/n64/libultra_rom.a(visetmode.o)
+ .bss           0x0000000080044670        0x0 /usr/lib/n64/libultra_rom.a(visetspecial.o)
+ .bss           0x0000000080044670        0x0 /usr/lib/n64/libultra_rom.a(visetyscale.o)
+ .bss           0x0000000080044670        0x0 /usr/lib/n64/libultra_rom.a(viswapbuf.o)
+ .bss           0x0000000080044670        0x0 /usr/lib/n64/libultra_rom.a(viswapcontext.o)
+ .bss           0x0000000080044670        0x0 /usr/lib/n64/libultra_rom.a(vitbl.o)
+ .bss           0x0000000080044670       0x38 /usr/lib/n64/libultra_rom.a(timerintr.o)
+                0x0000000080044670                __osBaseTimer
+                0x0000000080044690                __osTimerCounter
+                0x0000000080044694                __osViIntrCount
+                0x0000000080044698                __osBaseCounter
+                0x00000000800446a0                __osCurrentTime
+ .bss           0x00000000800446a8        0x0 /usr/lib/n64/libultra_rom.a(crc.o)
+ .bss           0x00000000800446a8       0x24 /usr/lib/n64/libultra_rom.a(siacs.o)
+                0x00000000800446a8                __osSiAccessQueueEnabled
+                0x00000000800446b0                __osSiAccessQueue
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(sirawdma.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(sirawread.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(sirawwrite.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(cosf.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(mtxutil.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(perspective.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(sinf.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(vimodempallan1.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(vimodentsclan1.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(vimodepallan1.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(contquery.o)
+ .bss           0x00000000800446cc        0x0 /usr/lib/n64/libultra_rom.a(contreaddata.o)
+ *fill*         0x00000000800446cc        0x4 
+ .bss           0x00000000800446d0       0x94 /usr/lib/n64/libultra_rom.a(controller.o)
+                0x00000000800446d0                __osEepromTimerMsg
+                0x00000000800446d8                __osEepromTimerQ
+                0x00000000800446f0                __osEepromTimer
+                0x0000000080044710                __osMaxControllers
+                0x0000000080044711                __osContLastCmd
+                0x0000000080044720                __osContPifRam
+                0x0000000080044760                __osContinitialized
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(parameters.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(exceptasm.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(interrupt.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(setintmask.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(normalize.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(translate.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(maptlbrdb.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(probetlb.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(unmaptlball.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(getcause.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(getcount.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(getsr.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(setcompare.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(setfpccsr.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(setsr.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(setwatchlo.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(bcmp.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(bcopy.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(bzero.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(libm_vals.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(invaldcache.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(invalicache.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(writebackdcacheall.o)
+ .bss           0x0000000080044764        0x0 /usr/lib/n64/libultra_rom.a(writebackdcache.o)
+ *fill*         0x0000000080044764        0x4 
+ .bss           0x0000000080044768      0x100 /usr/lib/n64/libultra_rom.a(contpfs.o)
+                0x0000000080044768                __osPfsInodeCache
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(contramwrite.o)
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(pfschecker.o)
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(devmgr.o)
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(epirawdma.o)
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(epirawread.o)
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(epirawwrite.o)
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(resetglobalintmask.o)
+ .bss           0x0000000080044868        0x0 /usr/lib/n64/libultra_rom.a(setglobalintmask.o)
+ .bss           0x0000000080044868      0x1b0 /usr/lib/n64/libultra_rom.a(kdebugserver.o)
+                0x0000000080044868                __osThreadSave
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(destroythread.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(yieldthread.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(sp.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(spgetstat.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(sprawdma.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(spsetstat.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(vigetcurrcontext.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(gettime.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(settimer.o)
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/libultra_rom.a(si.o)
  */libnusys.a:*.o(COMMON)
  */libnusys.a:*.o(.scommon)
  */libnusys.a:*.o(.*bss*)
- .bss           0x0000000080044848        0x0 /usr/lib/n64/nusys/libnusys.a(nucontinit.o)
- .bss           0x0000000080044848      0x210 /usr/lib/n64/nusys/libnusys.a(nucontmgr.o)
-                0x0000000080044848                nuContPfs
-                0x00000000800449e8                nuContReadFunc
-                0x00000000800449ec                nuContDataLockKey
-                0x00000000800449f0                nuContNum
-                0x00000000800449f8                nuContData
-                0x0000000080044a10                nuContStatus
-                0x0000000080044a20                nuContDataMutexQ
-                0x0000000080044a38                nuContWaitMesgQ
- .bss           0x0000000080044a58        0x6 /usr/lib/n64/nusys/libnusys.a(nucontpakmgr.o)
-                0x0000000080044a58                nuContPakGameCode
-                0x0000000080044a5c                nuContPakCompanyCode
- .bss           0x0000000080044a5e        0x0 /usr/lib/n64/nusys/libnusys.a(nucontqueryread.o)
- *fill*         0x0000000080044a5e        0x2 
- .bss           0x0000000080044a60       0x28 /usr/lib/n64/nusys/libnusys.a(nucontrmbmgr.o)
-                0x0000000080044a60                nuContRmbCtl
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayon.o)
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxfuncset.o)
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxinit_ex2.o)
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetcfb.o)
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetucodefifo.o)
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfb.o)
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfbfuncset.o)
- .bss           0x0000000080044a88        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxtaskallendwait.o)
- *fill*         0x0000000080044a88        0x8 
- .bss           0x0000000080044a90     0x2598 /usr/lib/n64/nusys/libnusys.a(nugfxtaskmgr.o)
-                0x0000000080044a90                nuGfxTaskEndFunc
-                0x0000000080044a94                nuGfxSwapCfbFunc
-                0x0000000080044a98                nuGfxUcodeFifoPtr
-                0x0000000080044a9c                nuGfxCfbCounter
-                0x0000000080044aa0                nuGfxDisplay
-                0x0000000080044aa4                nuGfxZBuffer
-                0x0000000080044aa8                nuGfxCfb_ptr
-                0x0000000080044aac                nuGfxCfb
-                0x0000000080044ab0                nuGfxTaskMgrMesgQ
-                0x0000000080044ac8                nuGfxTaskSpool
-                0x0000000080044ad0                nuGfxTask
-                0x0000000080044e40                nuGfxUcode
- *fill*         0x0000000080047028        0x8 
- .bss           0x0000000080047030     0x21f0 /usr/lib/n64/nusys/libnusys.a(nugfxthread.o)
-                0x0000000080047030                nuGfxThread
-                0x00000000800471e0                nuGfxMesgQ
-                0x00000000800471f8                nuGfxPreNMIFunc
-                0x00000000800471fc                nuGfxFunc
- .bss           0x0000000080049220       0xe8 /usr/lib/n64/nusys/libnusys.a(nupiinit.o)
-                0x0000000080049220                nuPiCartHandle
- *fill*         0x0000000080049308        0x8 
- .bss           0x0000000080049310    0x20000 /usr/lib/n64/nusys/libnusys.a(nurdpoutput.o)
-                0x0000000080049310                nuRDPOutputBuf
- .bss           0x0000000080069310     0x6690 /usr/lib/n64/nusys/libnusys.a(nusched.o)
-                0x0000000080069310                nuScPreNMIFlag
-                0x0000000080069314                nuScPreNMIFunc
-                0x0000000080069320                nusched
- .bss           0x000000008006f9a0        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackadd.o)
- .bss           0x000000008006f9a0        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackremove.o)
- .bss           0x000000008006f9a0     0x2210 /usr/lib/n64/nusys/libnusys.a(nusimgr.o)
-                0x000000008006f9a0                nuSiCallBackList
-                0x000000008006f9a8                nuSiMgrMesgQ
-                0x000000008006f9c0                nuSiMesgQ
- .bss           0x0000000080071bb0      0xc10 /usr/lib/n64/nusys/libnusys.a(nuyieldbuf.o)
-                0x0000000080071bb0                nuYieldBuf
- .bss           0x00000000800727c0        0x0 /usr/lib/n64/nusys/libnusys.a(nucontdatalock.o)
- .bss           0x00000000800727c0      0x400 /usr/lib/n64/nusys/libnusys.a(nudramstack.o)
-                0x00000000800727c0                nuDramStack
- .bss           0x0000000080072bc0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayoff.o)
- .bss           0x0000000080072bc0        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxretracewait.o)
-                0x0000000080072bc0                _codeSegmentBssEnd = ALIGN ((ADDR (.code.noload) + SIZEOF (.code.noload)), 0x10)
-                0x0000000000039370                _codeSegmentBssSize = (_codeSegmentBssEnd - _codeSegmentBssStart)
-                0x0000000080072bc0                . = _codeSegmentBssEnd
+ .bss           0x0000000080044a18        0x0 /usr/lib/n64/nusys/libnusys.a(nucontinit.o)
+ .bss           0x0000000080044a18      0x210 /usr/lib/n64/nusys/libnusys.a(nucontmgr.o)
+                0x0000000080044a18                nuContPfs
+                0x0000000080044bb8                nuContReadFunc
+                0x0000000080044bbc                nuContDataLockKey
+                0x0000000080044bc0                nuContNum
+                0x0000000080044bc8                nuContData
+                0x0000000080044be0                nuContStatus
+                0x0000000080044bf0                nuContDataMutexQ
+                0x0000000080044c08                nuContWaitMesgQ
+ .bss           0x0000000080044c28        0x6 /usr/lib/n64/nusys/libnusys.a(nucontpakmgr.o)
+                0x0000000080044c28                nuContPakGameCode
+                0x0000000080044c2c                nuContPakCompanyCode
+ .bss           0x0000000080044c2e        0x0 /usr/lib/n64/nusys/libnusys.a(nucontqueryread.o)
+ *fill*         0x0000000080044c2e        0x2 
+ .bss           0x0000000080044c30       0x28 /usr/lib/n64/nusys/libnusys.a(nucontrmbmgr.o)
+                0x0000000080044c30                nuContRmbCtl
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayon.o)
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxfuncset.o)
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxinit_ex2.o)
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetcfb.o)
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxsetucodefifo.o)
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfb.o)
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxswapcfbfuncset.o)
+ .bss           0x0000000080044c58        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxtaskallendwait.o)
+ *fill*         0x0000000080044c58        0x8 
+ .bss           0x0000000080044c60     0x2598 /usr/lib/n64/nusys/libnusys.a(nugfxtaskmgr.o)
+                0x0000000080044c60                nuGfxTaskEndFunc
+                0x0000000080044c64                nuGfxSwapCfbFunc
+                0x0000000080044c68                nuGfxUcodeFifoPtr
+                0x0000000080044c6c                nuGfxCfbCounter
+                0x0000000080044c70                nuGfxDisplay
+                0x0000000080044c74                nuGfxZBuffer
+                0x0000000080044c78                nuGfxCfb_ptr
+                0x0000000080044c7c                nuGfxCfb
+                0x0000000080044c80                nuGfxTaskMgrMesgQ
+                0x0000000080044c98                nuGfxTaskSpool
+                0x0000000080044ca0                nuGfxTask
+                0x0000000080045010                nuGfxUcode
+ *fill*         0x00000000800471f8        0x8 
+ .bss           0x0000000080047200     0x21f0 /usr/lib/n64/nusys/libnusys.a(nugfxthread.o)
+                0x0000000080047200                nuGfxThread
+                0x00000000800473b0                nuGfxMesgQ
+                0x00000000800473c8                nuGfxPreNMIFunc
+                0x00000000800473cc                nuGfxFunc
+ .bss           0x00000000800493f0       0xe8 /usr/lib/n64/nusys/libnusys.a(nupiinit.o)
+                0x00000000800493f0                nuPiCartHandle
+ *fill*         0x00000000800494d8        0x8 
+ .bss           0x00000000800494e0    0x20000 /usr/lib/n64/nusys/libnusys.a(nurdpoutput.o)
+                0x00000000800494e0                nuRDPOutputBuf
+ .bss           0x00000000800694e0     0x6690 /usr/lib/n64/nusys/libnusys.a(nusched.o)
+                0x00000000800694e0                nuScPreNMIFlag
+                0x00000000800694e4                nuScPreNMIFunc
+                0x00000000800694f0                nusched
+ .bss           0x000000008006fb70        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackadd.o)
+ .bss           0x000000008006fb70        0x0 /usr/lib/n64/nusys/libnusys.a(nusicallbackremove.o)
+ .bss           0x000000008006fb70     0x2210 /usr/lib/n64/nusys/libnusys.a(nusimgr.o)
+                0x000000008006fb70                nuSiCallBackList
+                0x000000008006fb78                nuSiMgrMesgQ
+                0x000000008006fb90                nuSiMesgQ
+ .bss           0x0000000080071d80      0xc10 /usr/lib/n64/nusys/libnusys.a(nuyieldbuf.o)
+                0x0000000080071d80                nuYieldBuf
+ .bss           0x0000000080072990        0x0 /usr/lib/n64/nusys/libnusys.a(nucontdatalock.o)
+ .bss           0x0000000080072990      0x400 /usr/lib/n64/nusys/libnusys.a(nudramstack.o)
+                0x0000000080072990                nuDramStack
+ .bss           0x0000000080072d90        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxdisplayoff.o)
+ .bss           0x0000000080072d90        0x0 /usr/lib/n64/nusys/libnusys.a(nugfxretracewait.o)
+                0x0000000080072d90                _codeSegmentBssEnd = ALIGN ((ADDR (.code.noload) + SIZEOF (.code.noload)), 0x10)
+                0x00000000000393b0                _codeSegmentBssSize = (_codeSegmentBssEnd - _codeSegmentBssStart)
+                0x0000000080072d90                . = _codeSegmentBssEnd
 
 /DISCARD/
  *(*)

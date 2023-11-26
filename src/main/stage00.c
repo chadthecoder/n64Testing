@@ -9,11 +9,15 @@
 #include "main.h"
 #include "graphic.h"
 
+static f32 lodPos_x; /* Display position X */
+
 static f32 lodRot_x; /* Rotating angle for X axis */
 static f32 lodRot_y; /* Rotating angle for Y axis */
 static f32 lodRot_z; /* Rotating angle for Z axis */
 
 static float cameraPos = 0; /* The display camera position */
+
+float cameraFov = 120.0f;
 
 void shadetri(Dynamic* dynamicp);
 
@@ -28,6 +32,8 @@ void initStage00(void)
     Mtx rotate_x;
   Mtx rotate_y; 
   Mtx rotate_z; 
+
+  lodPos_x = 50.0f;
 
   lodRot_x = 0.0;
     lodRot_y = 0.0;
@@ -46,13 +52,28 @@ void makeDL00(void)
   gfxClearCfb();
 
   /* The set of projection modeling matrices  */
-  guFrustum(&gfx_dynamic.projection,
+  /* guFrustum(&gfx_dynamic.projection,
 	  -(float)SCREEN_WD/2.0F, (float)SCREEN_WD/2.0F,
 	  -(float)SCREEN_HT/2.0F, (float)SCREEN_HT/2.0F,
-	  1.0F, 10.0F, 1.0F); //guFrustum is for prospective projection
+	  1.0F, 10.0F, 1.0F); */ //guFrustum is for prospective projection
   //guRotate(&gfx_dynamic.modeling, 0.0F, 0.0F, 0.0F, 1.0F);
 
-  guRotate(&gfx_dynamic.modeling, lodRot_x, 0.0F, 0.0F, 1.0f);
+  // Initialize the projection matrix
+  u16 persp_norm;
+
+  guPerspective(
+    &gfx_dynamic.projection,
+    &persp_norm,
+    cameraFov,
+    (float)SCREEN_WD / (float)SCREEN_HT,
+    10,
+    10000,
+    1.0
+  );
+
+  guTranslate(&gfx_dynamic.translate, lodPos_x,lodPos_x, lodPos_x); //not working?
+
+  guRotate(&gfx_dynamic.modeling, lodRot_x, 0.0F, 1.0F, 0.0f);
 
   /* guRotate(&rotate_x, lodRot_x, 1.0F, 0.0F, 0.0F);
   guRotate(&rotate_y, lodRot_y, 0.0F, 1.0F, 0.0F);
@@ -170,15 +191,15 @@ static Vtx shade_vtx[] =  {
         {         64, -64, -1, 0, 0, 0, 0, 0, 0xff, 0xff	},
         {        -64, -64, -1, 0, 0, 0, 0xff, 0, 0, 0xff	}, */
 
-        {        -64,  -64, -30, 0, 0, 0, 0, 0xff, 0, 0xff	},
-        {         64,  -64, -30, 0, 0, 0, 0, 0, 0, 0xff	},
-        {         64, -64, -20, 0, 0, 0, 0, 0, 0xff, 0xff	},
-        {        -64, -64, -20, 0, 0, 0, 0xff, 0, 0, 0xff	},
+        {        -64,  -64, 64, 0, 0, 0, 0, 0xff, 0, 0xff	},
+        {         64,  -64, 64, 0, 0, 0, 0, 0, 0, 0xff	},
+        {         64, -64, -64, 0, 0, 0, 0, 0, 0xff, 0xff	},
+        {        -64, -64, -64, 0, 0, 0, 0xff, 0, 0, 0xff	},
 
-        {        -64,  64, -20, 0, 0, 0, 0, 0xff, 0, 0xff	},
-        {         -64,  64, -30, 0, 0, 0, 0, 0, 0, 0xff	},
-        {         64, 64, -30, 0, 0, 0, 0, 0, 0xff, 0xff	},
-        {        64, 64, -20, 0, 0, 0, 0xff, 0, 0, 0xff	},
+        {        -64,  64, -64, 0, 0, 0, 0, 0xff, 0, 0xff	},
+        {         -64,  64, 64, 0, 0, 0, 0, 0, 0, 0xff	},
+        {         64, 64, 64, 0, 0, 0, 0, 0, 0xff, 0xff	},
+        {        64, 64, -64, 0, 0, 0, 0xff, 0, 0, 0xff	},
 };
 
 /* Draw a square  */

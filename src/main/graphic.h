@@ -21,6 +21,7 @@
 typedef struct {
   Mtx     projection;
   Mtx     modeling;
+  Mtx     translate;
 } Dynamic;
 
 /*-------------------------------- parameter---------------------------------*/
