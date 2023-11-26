@@ -9,7 +9,7 @@
 #include "main.h"
 #include "graphic.h"
 
-static f32 lodPos_x; /* Display position X */
+static f32 lodPos_x = 400.0; /* Display position X */
 
 static f32 lodRot_x; /* Rotating angle for X axis */
 static f32 lodRot_y; /* Rotating angle for Y axis */
@@ -38,7 +38,7 @@ void initStage00(void)
   Mtx rotate_y; 
   Mtx rotate_z; 
 
-  lodPos_x = (f32)100.0;
+  //lodPos_x = (f32)100.0;
 
   lodRot_x = 0.0;
     lodRot_y = 0.0;
@@ -82,7 +82,7 @@ void makeDL00(void)
 
   guRotate(&gfx_dynamic.modeling, lodRot_x, 0.0F, 1.0F, 0.0f);
 
-  guTranslate(&gfx_dynamic.translate, lodPos_x, 0, lodPos_x); //not working?
+  guTranslate(&gfx_dynamic.translate, 0, 0, lodPos_x); //not working?
 
   
 
@@ -128,7 +128,9 @@ void updateGame00(void)
 
   lodRot_x += (f32)1.0;
 
-  //lodPos_x += (f32)10.0;
+  lodPos_x += (f32)1.0;
+
+  if(lodPos_x > 500.0) lodPos_x = 300.0;
 
   //guRotate(&gfx_dynamic.modeling, 45.0F, 0.0F, 0.0F, 1.0F);
   //osSyncPrintf("B button Push\n");
@@ -207,7 +209,7 @@ static Vtx shade_vtx[] =  {
         {         64, -64, -1, 0, 0, 0, 0, 0, 0xff, 0xff	},
         {        -64, -64, -1, 0, 0, 0, 0xff, 0, 0, 0xff	}, */
 
-        {        -64,  -64, 64, 0, 0, 0, 0, 0xff, 0, 0xff	},
+        /* {        -64,  -64, 64, 0, 0, 0, 0, 0xff, 0, 0xff	},
         {         64,  -64, 64, 0, 0, 0, 0, 0, 0, 0xff	},
         {         64, -64, -64, 0, 0, 0, 0, 0, 0xff, 0xff	},
         {        -64, -64, -64, 0, 0, 0, 0xff, 0, 0, 0xff	},
@@ -215,7 +217,17 @@ static Vtx shade_vtx[] =  {
         {        -64,  64, -64, 0, 0, 0, 0, 0xff, 0, 0xff	},
         {         -64,  64, 64, 0, 0, 0, 0, 0, 0, 0xff	},
         {         64, 64, 64, 0, 0, 0, 0, 0, 0xff, 0xff	},
-        {        64, 64, -64, 0, 0, 0, 0xff, 0, 0, 0xff	},
+        {        64, 64, -64, 0, 0, 0, 0xff, 0, 0, 0xff	}, */
+
+        {        -64,  -64, 64, 0, 0, 0, 0, 0xff, 0, 0	},
+        {         64,  -64, 64, 0, 0, 0, 0, 0, 0, 0	},
+        {         64, -64, -64, 0, 0, 0, 0, 0, 0xff, 0	},
+        {        -64, -64, -64, 0, 0, 0, 0xff, 0, 0, 0	},
+
+        {        -64,  64, -64, 0, 0, 0, 0, 0xff, 0, 0	},
+        {         -64,  64, 64, 0, 0, 0, 0, 0, 0, 0	},
+        {         64, 64, 64, 0, 0, 0, 0, 0, 0xff, 0	},
+        {        64, 64, -64, 0, 0, 0, 0xff, 0, 0, 0	},
 };
 
 /* Draw a square  */
@@ -245,6 +257,8 @@ void shadetri(Dynamic* dynamicp)
   gDPPipeSync(glistp++);
   gDPSetCycleType(glistp++,G_CYC_1CYCLE);
   gDPSetRenderMode(glistp++,G_RM_AA_OPA_SURF, G_RM_AA_OPA_SURF2);
+  gDPSetDepthSource(glistp++, G_ZS_PRIM);
+  gDPSetPrimDepth(glistp++, 0, 0);
   gSPClearGeometryMode(glistp++,0xFFFFFFFF);
   gSPSetGeometryMode(glistp++,G_SHADE| G_SHADING_SMOOTH);
 
